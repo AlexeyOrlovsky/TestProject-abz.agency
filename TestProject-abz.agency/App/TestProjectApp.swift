@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct TestProjectApp: App {
+    
+    // MARK: - Dependencies
+    @Inject(\.appCoordinator) var appCoordinator
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            appCoordinator.assemble()
         }
     }
 }
