@@ -26,5 +26,9 @@ extension Container: AutoRegistering {
     var launchModule: Factory<LaunchModule> {
         self { .init() }
     }
+    
+    var noConnectionModule: Factory<NoConnectionModule> {
+        self { .init() }
+    }
 }
 

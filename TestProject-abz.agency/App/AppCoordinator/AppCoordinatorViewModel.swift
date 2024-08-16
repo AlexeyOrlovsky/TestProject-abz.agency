@@ -20,6 +20,8 @@ extension Module {
         // MARK: - Screen
         enum Screen {
             case launch
+            
+            case noConnection
         }
 
         // MARK: - Public Properties
@@ -27,6 +29,9 @@ extension Module {
 
         // MARK: - Private Properties
         @Published private var appRoutes: AppRoutes
+        
+        // MARK: - Helpers
+        private var cancellable: CancelBag = .init()
 
         // MARK: - Init
         init(
@@ -39,7 +44,7 @@ extension Module {
                 appRoutes.routes = value
             }
             
-            self.configureObserving()
+           self.configureObserving()
         }
     }
 }
@@ -51,5 +56,6 @@ private extension ViewModel {
             .sink { [weak self] _ in
                 self?.objectWillChange.send()
             }
+            .store(in: cancellable)
     }
 }

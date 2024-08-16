@@ -14,7 +14,7 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         private enum Constants {
-            static let timeoutToClose: Int16 = 3
+            static let timeoutToClose: Int16 = 1
             static let fetchHistoryItemsPerPage: Int = 10
         }
 
