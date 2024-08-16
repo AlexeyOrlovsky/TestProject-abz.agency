@@ -28,7 +28,14 @@ extension Module {
 // MARK: - Private Layout
 private extension ModuleView {
     @ViewBuilder func content() -> some View {
-        Text("Hello")
+        StatusView(
+            image: Image("noInternetConnection"),
+            message: "There is no internet connection",
+            buttonText: "Try again",
+            buttonAction: {
+                debugPrint("Try again")
+            }
+        )
     }
 }
 
