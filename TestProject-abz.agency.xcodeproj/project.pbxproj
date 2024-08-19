@@ -20,6 +20,14 @@
 		D205A4292C6E72D200891867 /* RestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4282C6E72D200891867 /* RestContainer.swift */; };
 		D205A42E2C6EB1ED00891867 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A42D2C6EB1ED00891867 /* CancelBag.swift */; };
 		D205A4302C6EB29000891867 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D205A42F2C6EB29000891867 /* Colors.xcassets */; };
+		D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35A2C7348F0004FECC8 /* SignUpModule.swift */; };
+		D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35B2C7348F0004FECC8 /* SignUpView.swift */; };
+		D231A35F2C7348F0004FECC8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */; };
+		D231A3642C735F65004FECC8 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3632C735F65004FECC8 /* AppTextField.swift */; };
+		D231A3662C73603E004FECC8 /* AppWhiteRoundedRectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3652C73603E004FECC8 /* AppWhiteRoundedRectangle.swift */; };
+		D231A3682C7360BD004FECC8 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3672C7360BD004FECC8 /* RoundedCornersShape.swift */; };
+		D231A36B2C7378EB004FECC8 /* TextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A36A2C7378EB004FECC8 /* TextField+Style.swift */; };
+		D231A36D2C73790B004FECC8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A36C2C73790B004FECC8 /* Style.swift */; };
 		D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4332C6F561A00891867 /* NoConnectionModule.swift */; };
 		D205A4372C6F561A00891867 /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4342C6F561A00891867 /* NoConnectionView.swift */; };
 		D205A4382C6F561A00891867 /* NoConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4352C6F561A00891867 /* NoConnectionViewModel.swift */; };
@@ -75,6 +83,15 @@
 		D205A4282C6E72D200891867 /* RestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestContainer.swift; sourceTree = "<group>"; };
 		D205A42D2C6EB1ED00891867 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		D205A42F2C6EB29000891867 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D205A4312C6EB91B00891867 /* TestProject-abz-agency-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TestProject-abz-agency-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D231A35A2C7348F0004FECC8 /* SignUpModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModule.swift; sourceTree = "<group>"; };
+		D231A35B2C7348F0004FECC8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		D231A3632C735F65004FECC8 /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
+		D231A3652C73603E004FECC8 /* AppWhiteRoundedRectangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppWhiteRoundedRectangle.swift; sourceTree = "<group>"; };
+		D231A3672C7360BD004FECC8 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
+		D231A36A2C7378EB004FECC8 /* TextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Style.swift"; sourceTree = "<group>"; };
+		D231A36C2C73790B004FECC8 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		D205A4312C6EB91B00891867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		D205A4332C6F561A00891867 /* NoConnectionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionModule.swift; sourceTree = "<group>"; };
 		D205A4342C6F561A00891867 /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
@@ -244,6 +261,8 @@
 		D22226A22C6E2B340042334B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				D205A40D2C6E6F9100891867 /* LaunchScreen */,
+				D231A3592C7348BE004FECC8 /* SignUpScreen */,
 				D205A40D2C6E6F9100891867 /* Launch */,
 				D2904B592C7A36F400798E8D /* TabBar */,
 				D231A3942C7781A1004FECC8 /* Users */,
@@ -260,6 +279,52 @@
 				D205A4142C6E6FD600891867 /* AppCoordinator */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D231A3592C7348BE004FECC8 /* SignUpScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D231A35A2C7348F0004FECC8 /* SignUpModule.swift */,
+				D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */,
+				D231A35B2C7348F0004FECC8 /* SignUpView.swift */,
+			);
+			path = SignUpScreen;
+			sourceTree = "<group>";
+		};
+		D231A3602C735E18004FECC8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				D231A3692C7378DE004FECC8 /* Styles */,
+				D231A3612C735F4E004FECC8 /* SwiftUI+Views */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		D231A3612C735F4E004FECC8 /* SwiftUI+Views */ = {
+			isa = PBXGroup;
+			children = (
+				D231A3622C735F53004FECC8 /* Core */,
+				D231A3672C7360BD004FECC8 /* RoundedCornersShape.swift */,
+			);
+			path = "SwiftUI+Views";
+			sourceTree = "<group>";
+		};
+		D231A3622C735F53004FECC8 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D231A3652C73603E004FECC8 /* AppWhiteRoundedRectangle.swift */,
+				D231A3632C735F65004FECC8 /* AppTextField.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D231A3692C7378DE004FECC8 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				D231A36C2C73790B004FECC8 /* Style.swift */,
+				D231A36A2C7378EB004FECC8 /* TextField+Style.swift */,
+			);
+			path = Styles;
 			sourceTree = "<group>";
 		};
 		D231A37A2C749934004FECC8 /* SignUpStates */ = {
@@ -400,6 +465,7 @@
 				D205A4312C6EB91B00891867 /* Info.plist */,
 				D22226A32C6E2B3F0042334B /* App */,
 				D205A4202C6E726200891867 /* DI */,
+				D231A3602C735E18004FECC8 /* Common */,
 				D205A4392C6F626200891867 /* Common */,
 				D22226A22C6E2B340042334B /* Modules */,
 				D205A42C2C6EB1D400891867 /* Utils */,
@@ -534,6 +600,8 @@
 				D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */,
 				D205A4112C6E6FAE00891867 /* LaunchModule.swift in Sources */,
 				D2904BA02C7E6A2700798E8D /* LocalizeKeys.swift in Sources */,
+				D231A36D2C73790B004FECC8 /* Style.swift in Sources */,
+				D231A3662C73603E004FECC8 /* AppWhiteRoundedRectangle.swift in Sources */,
 				D205A4122C6E6FAE00891867 /* LaunchView.swift in Sources */,
 				D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */,
 				D211D61C2C80C69A00FE6035 /* AppAssets.generated.swift in Sources */,
@@ -551,6 +619,8 @@
 				D2ABB53E2C6E234800D1A3BE /* TestProjectApp.swift in Sources */,
 				D205A4182C6E703C00891867 /* AppCoordinatorModule.swift in Sources */,
 				D205A41C2C6E704900891867 /* AppRoutes.swift in Sources */,
+				D231A36B2C7378EB004FECC8 /* TextField+Style.swift in Sources */,
+				D231A3682C7360BD004FECC8 /* RoundedCornersShape.swift in Sources */,
 				D205A4192C6E703C00891867 /* AppCoordinator.swift in Sources */,
 				D211D6232C81D02200FE6035 /* NetworkMonitor.swift in Sources */,
 				D231A39D2C7784A0004FECC8 /* UsersListRowView.swift in Sources */,
@@ -566,6 +636,10 @@
 				D205A4292C6E72D200891867 /* RestContainer.swift in Sources */,
 				D20A6F902C7F72000055B5D8 /* UsersStates.swift in Sources */,
 				D211D6282C81D07300FE6035 /* BuildBlocks.swift in Sources */,
+				D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */,
+				D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */,
+				D231A35F2C7348F0004FECC8 /* SignUpViewModel.swift in Sources */,
+				D231A3642C735F65004FECC8 /* AppTextField.swift in Sources */,
 				D205A43D2C6F643500891867 /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
