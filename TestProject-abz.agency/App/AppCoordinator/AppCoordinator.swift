@@ -17,15 +17,17 @@ extension Module {
         
         // MARK: - Private
         @Inject(\.launchModule) private var launchModule
+        @Inject(\.noConnectionModule) private var noConnectionModule
         
         var body: some View {
-            launchModule.assemble()
-//            Router(viewModel.routes) { screen, _ in
-//                switch screen {
-//                case .launch:
-//                    launchModule.assemble()
-//                }
-//            }
+            Router(viewModel.routes) { screen, _ in
+                switch screen {
+                case .launch:
+                    launchModule.assemble()
+                case .noConnection:
+                    noConnectionModule.assemble()
+                }
+            }
         }
     }
 }
