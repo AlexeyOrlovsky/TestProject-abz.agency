@@ -1,5 +1,5 @@
 //
-//  SuccessView.swift
+//  FailedView.swift
 //  TestProject-abz.agency
 //
 //  Created by Алексей Орловский on 20.08.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-private typealias Module = SuccessModule
+private typealias Module = FailedModule
 private typealias ModuleView = Module.MainView
 
 // MARK: - MainView
@@ -30,11 +30,11 @@ private extension ModuleView {
     @ViewBuilder func content() -> some View {
         ZStack {
             StatusView(
-                image: Image("signUpSuccess"),
-                message: "User successfully registered",
-                buttonText: "Got it",
+                image: Image("signUpFailed"),
+                message: "That email is already registered",
+                buttonText: "Try again",
                 buttonAction: {
-                    debugPrint("Got it")
+                    debugPrint("Try again")
                 }
             )
             .padding()
@@ -67,9 +67,9 @@ private extension ModuleView {
 
 // MARK: - Previews
 #if !RELEASE
-struct SuccessView_Previews: PreviewProvider {
+struct FailedView_Previews: PreviewProvider {
     static var previews: some View {
-        SuccessModule().assemble()
+        FailedModule().assemble()
     }
 }
 #endif

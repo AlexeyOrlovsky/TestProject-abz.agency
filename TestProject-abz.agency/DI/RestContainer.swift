@@ -30,5 +30,13 @@ extension Container: AutoRegistering {
     var noConnectionModule: Factory<NoConnectionModule> {
         self { .init() }
     }
+    
+    var signUpSuccessModule: Factory<SuccessModule> {
+        self { .init() }
+    }
+    
+    var signUpFailedModule: Factory<FailedModule> {
+        self { .init() }
+    }
 }
 

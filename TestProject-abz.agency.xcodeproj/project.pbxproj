@@ -27,6 +27,9 @@
 		D231A37F2C74995F004FECC8 /* SuccessModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37C2C74995F004FECC8 /* SuccessModule.swift */; };
 		D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37D2C74995F004FECC8 /* SuccessView.swift */; };
 		D231A3812C74995F004FECC8 /* SuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37E2C74995F004FECC8 /* SuccessViewModel.swift */; };
+		D231A3862C749E73004FECC8 /* FailedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3832C749E73004FECC8 /* FailedModule.swift */; };
+		D231A3872C749E73004FECC8 /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3842C749E73004FECC8 /* FailedView.swift */; };
+		D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3852C749E73004FECC8 /* FailedViewModel.swift */; };
 		D2ABB53E2C6E234800D1A3BE /* TestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABB53D2C6E234800D1A3BE /* TestProjectApp.swift */; };
 		D2ABB5422C6E234900D1A3BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ABB5412C6E234900D1A3BE /* Assets.xcassets */; };
 		D2ABB5452C6E234900D1A3BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ABB5442C6E234900D1A3BE /* Preview Assets.xcassets */; };
@@ -52,6 +55,9 @@
 		D231A37C2C74995F004FECC8 /* SuccessModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModule.swift; sourceTree = "<group>"; };
 		D231A37D2C74995F004FECC8 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		D231A37E2C74995F004FECC8 /* SuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewModel.swift; sourceTree = "<group>"; };
+		D231A3832C749E73004FECC8 /* FailedModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedModule.swift; sourceTree = "<group>"; };
+		D231A3842C749E73004FECC8 /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
+		D231A3852C749E73004FECC8 /* FailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedViewModel.swift; sourceTree = "<group>"; };
 		D2ABB53A2C6E234800D1A3BE /* TestProject-abz.agency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestProject-abz.agency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ABB53D2C6E234800D1A3BE /* TestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectApp.swift; sourceTree = "<group>"; };
 		D2ABB5412C6E234900D1A3BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -159,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				D231A37B2C749948004FECC8 /* SuccessScreen */,
+				D231A3822C749E5A004FECC8 /* FailedScreen */,
 			);
 			path = SignUpStates;
 			sourceTree = "<group>";
@@ -171,6 +178,16 @@
 				D231A37D2C74995F004FECC8 /* SuccessView.swift */,
 			);
 			path = SuccessScreen;
+			sourceTree = "<group>";
+		};
+		D231A3822C749E5A004FECC8 /* FailedScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D231A3832C749E73004FECC8 /* FailedModule.swift */,
+				D231A3852C749E73004FECC8 /* FailedViewModel.swift */,
+				D231A3842C749E73004FECC8 /* FailedView.swift */,
+			);
+			path = FailedScreen;
 			sourceTree = "<group>";
 		};
 		D2ABB5312C6E234800D1A3BE = {
@@ -291,6 +308,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D231A3862C749E73004FECC8 /* FailedModule.swift in Sources */,
+				D231A3872C749E73004FECC8 /* FailedView.swift in Sources */,
+				D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */,
 				D205A4112C6E6FAE00891867 /* LaunchModule.swift in Sources */,
 				D205A4122C6E6FAE00891867 /* LaunchView.swift in Sources */,
 				D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */,

@@ -18,6 +18,8 @@ extension Module {
         // MARK: - Private
         @Inject(\.launchModule) private var launchModule
         @Inject(\.noConnectionModule) private var noConnectionModule
+        @Inject(\.signUpSuccessModule) private var signUpSuccessModule
+        @Inject(\.signUpFailedModule) private var signUpFailedModule
         
         var body: some View {
             Router(viewModel.routes) { screen, _ in
@@ -26,6 +28,10 @@ extension Module {
                     launchModule.assemble()
                 case .noConnection:
                     noConnectionModule.assemble()
+                case .signUpSuccess: 
+                    signUpSuccessModule.assemble()
+                case .signUpFailed:
+                    signUpFailedModule.assemble()
                 }
             }
         }
