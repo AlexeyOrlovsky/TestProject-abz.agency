@@ -28,6 +28,8 @@
 		D231A3682C7360BD004FECC8 /* RoundedCornersShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3672C7360BD004FECC8 /* RoundedCornersShape.swift */; };
 		D231A36B2C7378EB004FECC8 /* TextField+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A36A2C7378EB004FECC8 /* TextField+Style.swift */; };
 		D231A36D2C73790B004FECC8 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A36C2C73790B004FECC8 /* Style.swift */; };
+		D231A36F2C7397D0004FECC8 /* AppCapsuleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A36E2C7397D0004FECC8 /* AppCapsuleButton.swift */; };
+		D231A3712C739859004FECC8 /* Button+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3702C739859004FECC8 /* Button+Style.swift */; };
 		D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4332C6F561A00891867 /* NoConnectionModule.swift */; };
 		D205A4372C6F561A00891867 /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4342C6F561A00891867 /* NoConnectionView.swift */; };
 		D205A4382C6F561A00891867 /* NoConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4352C6F561A00891867 /* NoConnectionViewModel.swift */; };
@@ -92,6 +94,8 @@
 		D231A3672C7360BD004FECC8 /* RoundedCornersShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersShape.swift; sourceTree = "<group>"; };
 		D231A36A2C7378EB004FECC8 /* TextField+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Style.swift"; sourceTree = "<group>"; };
 		D231A36C2C73790B004FECC8 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
+		D231A36E2C7397D0004FECC8 /* AppCapsuleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCapsuleButton.swift; sourceTree = "<group>"; };
+		D231A3702C739859004FECC8 /* Button+Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Button+Style.swift"; sourceTree = "<group>"; };
 		D205A4312C6EB91B00891867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
 		D205A4332C6F561A00891867 /* NoConnectionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionModule.swift; sourceTree = "<group>"; };
 		D205A4342C6F561A00891867 /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
@@ -313,6 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				D231A3652C73603E004FECC8 /* AppWhiteRoundedRectangle.swift */,
+				D231A36E2C7397D0004FECC8 /* AppCapsuleButton.swift */,
 				D231A3632C735F65004FECC8 /* AppTextField.swift */,
 			);
 			path = Core;
@@ -322,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				D231A36C2C73790B004FECC8 /* Style.swift */,
+				D231A3702C739859004FECC8 /* Button+Style.swift */,
 				D231A36A2C7378EB004FECC8 /* TextField+Style.swift */,
 			);
 			path = Styles;
@@ -624,6 +630,8 @@
 				D205A4192C6E703C00891867 /* AppCoordinator.swift in Sources */,
 				D211D6232C81D02200FE6035 /* NetworkMonitor.swift in Sources */,
 				D231A39D2C7784A0004FECC8 /* UsersListRowView.swift in Sources */,
+				D231A36F2C7397D0004FECC8 /* AppCapsuleButton.swift in Sources */,
+				D231A3712C739859004FECC8 /* Button+Style.swift in Sources */,
 				D205A4242C6E727F00891867 /* Container.swift in Sources */,
 				D231A3982C778472004FECC8 /* UsersModule.swift in Sources */,
 				D231A3992C778472004FECC8 /* UsersView.swift in Sources */,

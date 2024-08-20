@@ -8,5 +8,6 @@
 import Foundation
 
 enum Style {
+    enum Button { }
     enum TextField { }
 }

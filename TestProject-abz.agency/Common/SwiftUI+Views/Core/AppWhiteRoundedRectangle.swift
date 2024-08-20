@@ -91,9 +91,7 @@ struct AppWhiteRoundedRectangle_Previews: PreviewProvider {
     @State static private var state: TextFieldStates = .default
     static var previews: some View {
         CurrentView(state: state)
-            .padding()
-        
-        CurrentView(corners: [.topLeft, .topRight], state: state)
+            .frame(height: 60)
             .padding()
     }
 }
