@@ -27,6 +27,10 @@ extension Container: AutoRegistering {
         self { .init() }
     }
     
+    var usersModule: Factory<UsersModule> {
+        self { .init() }
+    }
+    
     var tabBarModule: Factory<TabBarModule> {
         self { .init() }
     }
