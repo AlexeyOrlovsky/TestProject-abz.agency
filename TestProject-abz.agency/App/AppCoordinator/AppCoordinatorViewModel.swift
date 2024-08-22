@@ -23,10 +23,9 @@ extension Module {
             
             case tabBar
             case noConnection
+            case users
             case signUpSuccess
             case signUpFailed
-            
-            case users
         }
 
         // MARK: - Public Properties
