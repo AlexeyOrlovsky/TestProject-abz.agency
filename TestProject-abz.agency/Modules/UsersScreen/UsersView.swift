@@ -28,7 +28,17 @@ extension Module {
 // MARK: - Private Layout
 private extension ModuleView {
     @ViewBuilder func content() -> some View {
-        Text("Hello")
+        Module.UsersListView(models: [
+            .init(
+                id: 1,
+                name: "AaA",
+                email: "Aaa",
+                phone: "edwe",
+                position_id: 1,
+                position: "",
+                photo: ""
+            )
+        ])
     }
 }
 

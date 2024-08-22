@@ -11,7 +11,7 @@ private typealias Module = UsersModule
 
 extension Module {
     // MARK: - HistoryModel
-    struct HistoryModel: Identifiable, Equatable {
+    struct UsersModel: Identifiable, Equatable {
         // MARK: - Public Properties
         var id: Int
         let name: String

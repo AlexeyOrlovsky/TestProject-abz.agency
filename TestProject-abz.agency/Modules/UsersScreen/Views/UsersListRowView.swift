@@ -9,20 +9,20 @@ import SwiftUI
 
 // private typealias Localization = AppLocale.Users
 private typealias Module = UsersModule
-private typealias CurrentView = Module.TravelHistoryListRowView
+private typealias CurrentView = Module.UsersListRowView
 
 extension Module {
-    struct TravelHistoryListRowView: View {
+    struct UsersListRowView: View {
         // MARK: - Public Properties
-        let model: HistoryModel
+        let model: UsersModel
 
         // MARK: - Private Properties
 
         // MARK: - Body
         var body: some View {
             content()
-                .padding(16)
-                .frame(maxWidth: .infinity)
+//                .padding(16)
+//                .frame(maxWidth: .infinity)
         }
     }
 }
@@ -30,7 +30,19 @@ extension Module {
 // MARK: - Private Layout
 private extension CurrentView {
     @ViewBuilder func content() -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack {
+            HStack(alignment: .top) {
+                Image(model.photo)
+                    .resizable()
+                    .frame(width: 50, height: 50)
+                
+                VStack(spacing: 12) {
+                    Text(model.name)
+                    Text(model.position)
+                    Text(model.email)
+                    Text(model.phone)
+                }
+            }
         }
     }
 }
@@ -41,25 +53,20 @@ private extension CurrentView {
 
 // MARK: - Previews
 #if !RELEASE
-struct TravelHistoryListRowView_Previews: PreviewProvider {
+struct UsersListRowView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-//            CurrentView(model: .init(
-//                id: "1",
-//                payStatus: .paid,
-//                licensePlate: "AA1010AA",
-//                gantries: .init(
-//                    firstGantry: "Gantry 1",
-//                    secondGantry: "Gantry 2"
-//                ),
-//                startDate: "2024-02-29T15:32:24.000000Z",
-//                endDate: "2024-02-29T18:22:18.000000Z",
-//                price: 0.0093,
-//                distance: 2
-//            ))
+            CurrentView(model: .init(
+                id: 1,
+                name: "",
+                email: "",
+                phone: "",
+                position_id: 1,
+                position: "",
+                photo: ""
+            ))
         }
         .background(.gray)
     }
 }
 #endif
-
