@@ -22,8 +22,8 @@ public typealias FontSwift = FontConvertible.FontSwift
 // swiftlint:disable identifier_name line_length type_body_length
 public enum AppFonts {
   public enum Nunito {
-    public static let normal = FontConvertible(name: "Nunito-Regular", family: "Nunito", path: "Nunito-Regular.ttf")
-    public static let all: [FontConvertible] = [normal]
+    public static let regular = FontConvertible(name: "Nunito-Regular", family: "Nunito", path: "Nunito-Regular.ttf")
+    public static let all: [FontConvertible] = [regular]
   }
   public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {
