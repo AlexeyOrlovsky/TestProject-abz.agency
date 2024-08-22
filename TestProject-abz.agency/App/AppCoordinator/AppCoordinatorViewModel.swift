@@ -23,6 +23,7 @@ extension Module {
             
             case tabBar
             case noConnection
+            case signUp
             case signUpSuccess
             case signUpFailed
         }
