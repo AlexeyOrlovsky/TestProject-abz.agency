@@ -48,6 +48,7 @@ private extension ModuleView {
 struct NoConnectionView_Previews: PreviewProvider {
     static var previews: some View {
         NoConnectionModule().assemble()
+            .previewDevice(.iPhone15Pro)
     }
 }
 #endif
