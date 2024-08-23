@@ -58,7 +58,8 @@ private extension CurrentView {
             Module.UsersListRowView(model: model)
             if model != models.last {
                 Rectangle()
-                    // .fill(AppColors.listSeparator.colorSwiftUI)
+                    .fill(.gray)
+                    .padding(.leading, 84)
                     .frame(maxWidth: .infinity)
                     .frame(height: 1)
             }
@@ -74,58 +75,44 @@ struct TravelHistoryListView_Previews: PreviewProvider {
             models: [
                 .init(
                     id: 1,
-                    name: "",
-                    email: "",
-                    phone: "",
+                    name: "Akela Versale",
+                    email: "morrterry@gmail.com",
+                    phone: "+36 (087) 849 37 34",
                     position_id: 1,
-                    position: "",
-                    photo: ""
+                    position: "Frontend Developer",
+                    photo: "person.fill"
                 ),
                 .init(
-                    id: 1,
-                    name: "",
-                    email: "",
-                    phone: "",
-                    position_id: 1,
-                    position: "",
-                    photo: ""
+                    id: 2,
+                    name: "Akela Versale",
+                    email: "morrterry@gmail.com",
+                    phone: "+36 (087) 849 37 34",
+                    position_id: 2,
+                    position: "Frontend Developer",
+                    photo: "person.fill"
+                ),
+                .init(
+                    id: 3,
+                    name: "Akela Versale",
+                    email: "morrterry@gmail.com",
+                    phone: "+36 (087) 849 37 34",
+                    position_id: 3,
+                    position: "Frontend Developer",
+                    photo: "person.fill"
+                ),
+                .init(
+                    id: 4,
+                    name: "Akela Versale",
+                    email: "morrterry@gmail.com",
+                    phone: "+36 (087) 849 37 34",
+                    position_id: 4,
+                    position: "Frontend Developer",
+                    photo: "person.fill"
                 )
             ]
             // fetchNextPage: { }
         )
-        .background(.gray)
-
-//        CurrentView( // swiftlint:disable:this trailing_closure
-//            models: [
-//                .init(
-//                    id: "1",
-//                    payStatus: .paid,
-//                    licensePlate: "AA1010AA",
-//                    gantries: .init(
-//                        firstGantry: "Gantry 1",
-//                        secondGantry: "Gantry 2"
-//                    ),
-//                    startDate: "2024-02-29T15:32:24.000000Z",
-//                    endDate: "2024-02-29T18:22:18.000000Z",
-//                    price: 0.0093,
-//                    distance: 2
-//                ),
-//                .init(
-//                    id: "2",
-//                    payStatus: .paid,
-//                    licensePlate: "AA1010AA",
-//                    gantries: .init(
-//                        firstGantry: "Gantry 1",
-//                        secondGantry: "Gantry 2"
-//                    ),
-//                    startDate: "2024-02-29T15:32:24.000000Z",
-//                    endDate: "2024-02-29T18:22:18.000000Z",
-//                    price: 0.0093,
-//                    distance: 2
-//                )
-//            ],
-//            fetchNextPage: { }
-//        )
+        .previewDevice(.iPhone15Pro)
     }
 }
 #endif

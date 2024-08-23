@@ -31,12 +31,21 @@ private extension ModuleView {
         Module.UsersListView(models: [
             .init(
                 id: 1,
-                name: "AaA",
-                email: "Aaa",
-                phone: "edwe",
+                name: "Akela Versale",
+                email: "morrterry@gmail.com",
+                phone: "+36 (087) 849 37 34",
                 position_id: 1,
-                position: "",
-                photo: ""
+                position: "Frontend Developer",
+                photo: "person.fill"
+            ),
+            .init(
+                id: 2,
+                name: "Akela Versale",
+                email: "morrterry@gmail.com",
+                phone: "+36 (087) 849 37 34",
+                position_id: 2,
+                position: "Frontend Developer",
+                photo: "person.fill"
             )
         ])
     }
@@ -51,6 +60,7 @@ private extension ModuleView {
 struct UsersView_Previews: PreviewProvider {
     static var previews: some View {
         UsersModule().assemble()
+            .previewDevice(.iPhone15Pro)
     }
 }
 #endif
