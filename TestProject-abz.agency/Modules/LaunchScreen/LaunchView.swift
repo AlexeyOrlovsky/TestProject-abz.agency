@@ -63,6 +63,7 @@ private extension ModuleView {
 struct LaunchView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchModule().assemble()
+            .previewDevice(.iPhone15Pro)
     }
 }
 #endif

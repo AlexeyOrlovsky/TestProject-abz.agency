@@ -70,6 +70,7 @@ private extension ModuleView {
 struct SuccessView_Previews: PreviewProvider {
     static var previews: some View {
         SuccessModule().assemble()
+            .previewDevice(.iPhone15Pro)
     }
 }
 #endif

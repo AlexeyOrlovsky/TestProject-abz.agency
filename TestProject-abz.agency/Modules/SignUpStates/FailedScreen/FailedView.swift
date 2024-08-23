@@ -70,6 +70,7 @@ private extension ModuleView {
 struct FailedView_Previews: PreviewProvider {
     static var previews: some View {
         FailedModule().assemble()
+            .previewDevice(.iPhone15Pro)
     }
 }
 #endif
