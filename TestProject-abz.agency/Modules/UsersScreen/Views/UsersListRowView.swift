@@ -38,13 +38,14 @@ private extension CurrentView {
                 VStack(alignment: .leading, spacing: 12) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text(model.name)
-                            .font(.title2)
+                            .font(.title3)
                         Text(model.position)
                             .foregroundColor(.gray)
                     }
                     
                     VStack(alignment: .leading, spacing: 8) {
                         Text(model.email)
+                            .lineLimit(1)
                         Text(model.phone)
                     }
                 }
