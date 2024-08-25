@@ -14,6 +14,8 @@ struct TabBarModule {
     
     @Injected(\.usersModule) private var usersModule
 
+    @Injected(\.signUpModule) private var signUpModule
+    
     // @Injected(\.statisticsRepository) private var statisticsRepository
     // @Injected(\.toastsRepository) private var toastsRepository
 

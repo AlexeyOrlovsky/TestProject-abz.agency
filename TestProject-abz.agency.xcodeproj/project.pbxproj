@@ -20,6 +20,10 @@
 		D205A4292C6E72D200891867 /* RestContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4282C6E72D200891867 /* RestContainer.swift */; };
 		D205A42E2C6EB1ED00891867 /* CancelBag.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A42D2C6EB1ED00891867 /* CancelBag.swift */; };
 		D205A4302C6EB29000891867 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D205A42F2C6EB29000891867 /* Colors.xcassets */; };
+		D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4332C6F561A00891867 /* NoConnectionModule.swift */; };
+		D205A4372C6F561A00891867 /* NoConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4342C6F561A00891867 /* NoConnectionView.swift */; };
+		D205A4382C6F561A00891867 /* NoConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A4352C6F561A00891867 /* NoConnectionViewModel.swift */; };
+		D205A43D2C6F643500891867 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D205A43C2C6F643500891867 /* StatusView.swift */; };
 		D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35A2C7348F0004FECC8 /* SignUpModule.swift */; };
 		D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35B2C7348F0004FECC8 /* SignUpView.swift */; };
 		D231A35F2C7348F0004FECC8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */; };
@@ -85,7 +89,11 @@
 		D205A4282C6E72D200891867 /* RestContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestContainer.swift; sourceTree = "<group>"; };
 		D205A42D2C6EB1ED00891867 /* CancelBag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelBag.swift; sourceTree = "<group>"; };
 		D205A42F2C6EB29000891867 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		D205A4312C6EB91B00891867 /* TestProject-abz-agency-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "TestProject-abz-agency-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D205A4312C6EB91B00891867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		D205A4332C6F561A00891867 /* NoConnectionModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionModule.swift; sourceTree = "<group>"; };
+		D205A4342C6F561A00891867 /* NoConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionView.swift; sourceTree = "<group>"; };
+		D205A4352C6F561A00891867 /* NoConnectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoConnectionViewModel.swift; sourceTree = "<group>"; };
+		D205A43C2C6F643500891867 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		D231A35A2C7348F0004FECC8 /* SignUpModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModule.swift; sourceTree = "<group>"; };
 		D231A35B2C7348F0004FECC8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -265,7 +273,6 @@
 		D22226A22C6E2B340042334B /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D205A40D2C6E6F9100891867 /* LaunchScreen */,
 				D231A3592C7348BE004FECC8 /* SignUpScreen */,
 				D205A40D2C6E6F9100891867 /* Launch */,
 				D2904B592C7A36F400798E8D /* TabBar */,
@@ -316,6 +323,7 @@
 		D231A3622C735F53004FECC8 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				D205A43C2C6F643500891867 /* StatusView.swift */,
 				D231A3652C73603E004FECC8 /* AppWhiteRoundedRectangle.swift */,
 				D231A36E2C7397D0004FECC8 /* AppCapsuleButton.swift */,
 				D231A3632C735F65004FECC8 /* AppTextField.swift */,
@@ -472,7 +480,6 @@
 				D22226A32C6E2B3F0042334B /* App */,
 				D205A4202C6E726200891867 /* DI */,
 				D231A3602C735E18004FECC8 /* Common */,
-				D205A4392C6F626200891867 /* Common */,
 				D22226A22C6E2B340042334B /* Modules */,
 				D205A42C2C6EB1D400891867 /* Utils */,
 				D22226A12C6E2B2A0042334B /* Resources */,
