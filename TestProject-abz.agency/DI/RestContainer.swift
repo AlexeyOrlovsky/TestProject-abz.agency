@@ -42,10 +42,5 @@ extension Container: AutoRegistering {
     var signUpFailedModule: Factory<FailedModule> {
         self { .init() }
     }
-    
-    // MARK: - Repositories
-    var toastsRepository: Factory<ToastsRepositoryProtocol> {
-        self { ToastsRepository() }
-    }
 }
 
