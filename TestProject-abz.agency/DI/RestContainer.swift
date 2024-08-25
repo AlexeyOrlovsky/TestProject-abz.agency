@@ -27,6 +27,10 @@ extension Container: AutoRegistering {
         self { .init() }
     }
     
+    var tabBarModule: Factory<TabBarModule> {
+        self { .init() }
+    }
+    
     var noConnectionModule: Factory<NoConnectionModule> {
         self { .init() }
     }
@@ -37,6 +41,11 @@ extension Container: AutoRegistering {
     
     var signUpFailedModule: Factory<FailedModule> {
         self { .init() }
+    }
+    
+    // MARK: - Repositories
+    var toastsRepository: Factory<ToastsRepositoryProtocol> {
+        self { ToastsRepository() }
     }
 }
 
