@@ -30,6 +30,9 @@
 		D231A3862C749E73004FECC8 /* FailedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3832C749E73004FECC8 /* FailedModule.swift */; };
 		D231A3872C749E73004FECC8 /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3842C749E73004FECC8 /* FailedView.swift */; };
 		D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3852C749E73004FECC8 /* FailedViewModel.swift */; };
+		D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */; };
+		D231A3932C777DBC004FECC8 /* Text+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3922C777DBC004FECC8 /* Text+Appearance.swift */; };
+		D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */; };
 		D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */; };
 		D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5A2C7A370800798E8D /* TabBarModule.swift */; };
 		D2904B5E2C7A370800798E8D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5B2C7A370800798E8D /* TabBarView.swift */; };
@@ -63,6 +66,9 @@
 		D231A3832C749E73004FECC8 /* FailedModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedModule.swift; sourceTree = "<group>"; };
 		D231A3842C749E73004FECC8 /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
 		D231A3852C749E73004FECC8 /* FailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedViewModel.swift; sourceTree = "<group>"; };
+		D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.generated.swift; sourceTree = "<group>"; };
+		D231A3922C777DBC004FECC8 /* Text+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Appearance.swift"; sourceTree = "<group>"; };
+		D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevicesKeys.swift; sourceTree = "<group>"; };
 		D2904B5A2C7A370800798E8D /* TabBarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModule.swift; sourceTree = "<group>"; };
 		D2904B5B2C7A370800798E8D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		D205A4392C6F626200891867 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				D231A3912C777DA8004FECC8 /* Appearance */,
 				D205A43C2C6F643500891867 /* StatusView.swift */,
 			);
 			path = Common;
@@ -147,6 +154,8 @@
 		D22226A12C6E2B2A0042334B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D231A38E2C777CB3004FECC8 /* Generated */,
+				D231A38A2C777ACC004FECC8 /* Fonts */,
 				D2ABB5412C6E234900D1A3BE /* Assets.xcassets */,
 				D205A42F2C6EB29000891867 /* Colors.xcassets */,
 			);
@@ -200,6 +209,30 @@
 				D231A3842C749E73004FECC8 /* FailedView.swift */,
 			);
 			path = FailedScreen;
+			sourceTree = "<group>";
+		};
+		D231A38A2C777ACC004FECC8 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D231A38E2C777CB3004FECC8 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		D231A3912C777DA8004FECC8 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				D231A3922C777DBC004FECC8 /* Text+Appearance.swift */,
+			);
+			path = Appearance;
 			sourceTree = "<group>";
 		};
 		D2904B592C7A36F400798E8D /* TabBar */ = {
@@ -267,6 +300,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2ABB5482C6E234900D1A3BE /* Build configuration list for PBXNativeTarget "TestProject-abz.agency" */;
 			buildPhases = (
+				D231A3902C777CEC004FECC8 /* SwiftGen */,
 				D2ABB5362C6E234800D1A3BE /* Sources */,
 				D2ABB5372C6E234800D1A3BE /* Frameworks */,
 				D2ABB5382C6E234800D1A3BE /* Resources */,
@@ -328,11 +362,34 @@
 			files = (
 				D205A4302C6EB29000891867 /* Colors.xcassets in Resources */,
 				D2ABB5452C6E234900D1A3BE /* Preview Assets.xcassets in Resources */,
+				D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */,
 				D2ABB5422C6E234900D1A3BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D231A3902C777CEC004FECC8 /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ -z \"$CI\" ]; then\n    if which swiftgen >/dev/null; then\n        swiftgen\n    else\n        echo \"error: 😢 SwiftGen not installed, download it from https://github.com/SwiftGen/SwiftGen\"\n    fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D2ABB5362C6E234800D1A3BE /* Sources */ = {
@@ -350,6 +407,7 @@
 				D205A4122C6E6FAE00891867 /* LaunchView.swift in Sources */,
 				D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */,
 				D231A37F2C74995F004FECC8 /* SuccessModule.swift in Sources */,
+				D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */,
 				D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */,
 				D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */,
 				D231A3812C74995F004FECC8 /* SuccessViewModel.swift in Sources */,
@@ -363,6 +421,7 @@
 				D205A4242C6E727F00891867 /* Container.swift in Sources */,
 				D205A42E2C6EB1ED00891867 /* CancelBag.swift in Sources */,
 				D205A41A2C6E703C00891867 /* AppCoordinatorViewModel.swift in Sources */,
+				D231A3932C777DBC004FECC8 /* Text+Appearance.swift in Sources */,
 				D205A4292C6E72D200891867 /* RestContainer.swift in Sources */,
 				D205A43D2C6F643500891867 /* StatusView.swift in Sources */,
 			);

@@ -1,0 +1,9 @@
+fonts:
+  - inputs:
+    - TestProject-abz.agency/Resources/Fonts
+    outputs:
+      - templatePath: swiftgen_templates/fonts/swift5.stencil
+        output: TestProject-abz.agency/Resources/Generated/AppFonts.generated.swift
+        params:
+          enumName: AppFonts
+          publicAccess: true

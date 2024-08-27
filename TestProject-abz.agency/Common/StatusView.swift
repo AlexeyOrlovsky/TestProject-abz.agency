@@ -40,7 +40,7 @@ private extension CurrentView {
                 action: buttonAction
             ) {
                 Text(buttonText)
-                    .font(.headline)
+                    .appFontRegularSize20()
                     .foregroundColor(.black)
                     .padding()
                     .frame(maxWidth: .infinity)
