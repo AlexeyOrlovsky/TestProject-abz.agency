@@ -30,9 +30,9 @@
 		D231A3862C749E73004FECC8 /* FailedModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3832C749E73004FECC8 /* FailedModule.swift */; };
 		D231A3872C749E73004FECC8 /* FailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3842C749E73004FECC8 /* FailedView.swift */; };
 		D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3852C749E73004FECC8 /* FailedViewModel.swift */; };
-		D231A38C2C777B08004FECC8 /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D231A38B2C777B08004FECC8 /* Nunito-Regular.ttf */; };
 		D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */; };
 		D231A3932C777DBC004FECC8 /* Text+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3922C777DBC004FECC8 /* Text+Appearance.swift */; };
+		D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */; };
 		D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */; };
 		D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5A2C7A370800798E8D /* TabBarModule.swift */; };
 		D2904B5E2C7A370800798E8D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5B2C7A370800798E8D /* TabBarView.swift */; };
@@ -66,9 +66,9 @@
 		D231A3832C749E73004FECC8 /* FailedModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedModule.swift; sourceTree = "<group>"; };
 		D231A3842C749E73004FECC8 /* FailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedView.swift; sourceTree = "<group>"; };
 		D231A3852C749E73004FECC8 /* FailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedViewModel.swift; sourceTree = "<group>"; };
-		D231A38B2C777B08004FECC8 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.generated.swift; sourceTree = "<group>"; };
 		D231A3922C777DBC004FECC8 /* Text+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Appearance.swift"; sourceTree = "<group>"; };
+		D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevicesKeys.swift; sourceTree = "<group>"; };
 		D2904B5A2C7A370800798E8D /* TabBarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModule.swift; sourceTree = "<group>"; };
 		D2904B5B2C7A370800798E8D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		D231A38A2C777ACC004FECC8 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				D231A38B2C777B08004FECC8 /* Nunito-Regular.ttf */,
+				D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -300,10 +300,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D2ABB5482C6E234900D1A3BE /* Build configuration list for PBXNativeTarget "TestProject-abz.agency" */;
 			buildPhases = (
+				D231A3902C777CEC004FECC8 /* SwiftGen */,
 				D2ABB5362C6E234800D1A3BE /* Sources */,
 				D2ABB5372C6E234800D1A3BE /* Frameworks */,
 				D2ABB5382C6E234800D1A3BE /* Resources */,
-				D231A3902C777CEC004FECC8 /* SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -362,7 +362,7 @@
 			files = (
 				D205A4302C6EB29000891867 /* Colors.xcassets in Resources */,
 				D2ABB5452C6E234900D1A3BE /* Preview Assets.xcassets in Resources */,
-				D231A38C2C777B08004FECC8 /* Nunito-Regular.ttf in Resources */,
+				D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */,
 				D2ABB5422C6E234900D1A3BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
