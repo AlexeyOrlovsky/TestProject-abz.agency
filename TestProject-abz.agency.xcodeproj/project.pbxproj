@@ -32,12 +32,15 @@
 		D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3852C749E73004FECC8 /* FailedViewModel.swift */; };
 		D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */; };
 		D231A3932C777DBC004FECC8 /* Text+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3922C777DBC004FECC8 /* Text+Appearance.swift */; };
-		D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */; };
 		D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */; };
 		D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5A2C7A370800798E8D /* TabBarModule.swift */; };
 		D2904B5E2C7A370800798E8D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5B2C7A370800798E8D /* TabBarView.swift */; };
 		D2904B5F2C7A370800798E8D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B5C2C7A370800798E8D /* TabBarViewModel.swift */; };
 		D2904B622C7A372300798E8D /* TabBarKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B612C7A372300798E8D /* TabBarKeys.swift */; };
+		D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */; };
+		D2904B982C7E04E900798E8D /* Localize.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2904B962C7E04E900798E8D /* Localize.strings */; };
+		D2904B9E2C7E6A1500798E8D /* AppStrings.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B9D2C7E6A1500798E8D /* AppStrings.generated.swift */; };
+		D2904BA02C7E6A2700798E8D /* LocalizeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2904B9F2C7E6A2700798E8D /* LocalizeKeys.swift */; };
 		D2ABB53E2C6E234800D1A3BE /* TestProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ABB53D2C6E234800D1A3BE /* TestProjectApp.swift */; };
 		D2ABB5422C6E234900D1A3BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ABB5412C6E234900D1A3BE /* Assets.xcassets */; };
 		D2ABB5452C6E234900D1A3BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2ABB5442C6E234900D1A3BE /* Preview Assets.xcassets */; };
@@ -68,12 +71,15 @@
 		D231A3852C749E73004FECC8 /* FailedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedViewModel.swift; sourceTree = "<group>"; };
 		D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFonts.generated.swift; sourceTree = "<group>"; };
 		D231A3922C777DBC004FECC8 /* Text+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Appearance.swift"; sourceTree = "<group>"; };
-		D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevicesKeys.swift; sourceTree = "<group>"; };
 		D2904B5A2C7A370800798E8D /* TabBarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarModule.swift; sourceTree = "<group>"; };
 		D2904B5B2C7A370800798E8D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		D2904B5C2C7A370800798E8D /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		D2904B612C7A372300798E8D /* TabBarKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarKeys.swift; sourceTree = "<group>"; };
+		D2904B932C7DFFC100798E8D /* Nunito-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-Regular.ttf"; sourceTree = "<group>"; };
+		D2904B972C7E04E900798E8D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localize.strings; sourceTree = "<group>"; };
+		D2904B9D2C7E6A1500798E8D /* AppStrings.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppStrings.generated.swift; sourceTree = "<group>"; };
+		D2904B9F2C7E6A2700798E8D /* LocalizeKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizeKeys.swift; sourceTree = "<group>"; };
 		D2ABB53A2C6E234800D1A3BE /* TestProject-abz.agency.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TestProject-abz.agency.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2ABB53D2C6E234800D1A3BE /* TestProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestProjectApp.swift; sourceTree = "<group>"; };
 		D2ABB5412C6E234900D1A3BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				D231A38E2C777CB3004FECC8 /* Generated */,
+				D2904B952C7E04CE00798E8D /* Localized */,
 				D231A38A2C777ACC004FECC8 /* Fonts */,
 				D2ABB5412C6E234900D1A3BE /* Assets.xcassets */,
 				D205A42F2C6EB29000891867 /* Colors.xcassets */,
@@ -223,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				D231A38D2C777CB3004FECC8 /* AppFonts.generated.swift */,
+				D2904B9D2C7E6A1500798E8D /* AppStrings.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -252,6 +260,15 @@
 				D2904B612C7A372300798E8D /* TabBarKeys.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D2904B952C7E04CE00798E8D /* Localized */ = {
+			isa = PBXGroup;
+			children = (
+				D2904B962C7E04E900798E8D /* Localize.strings */,
+				D2904B9F2C7E6A2700798E8D /* LocalizeKeys.swift */,
+			);
+			path = Localized;
 			sourceTree = "<group>";
 		};
 		D2ABB5312C6E234800D1A3BE = {
@@ -360,6 +377,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2904B982C7E04E900798E8D /* Localize.strings in Resources */,
 				D205A4302C6EB29000891867 /* Colors.xcassets in Resources */,
 				D2ABB5452C6E234900D1A3BE /* Preview Assets.xcassets in Resources */,
 				D2904B942C7DFFC100798E8D /* Nunito-Regular.ttf in Resources */,
@@ -404,8 +422,10 @@
 				D2904B5F2C7A370800798E8D /* TabBarViewModel.swift in Sources */,
 				D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */,
 				D205A4112C6E6FAE00891867 /* LaunchModule.swift in Sources */,
+				D2904BA02C7E6A2700798E8D /* LocalizeKeys.swift in Sources */,
 				D205A4122C6E6FAE00891867 /* LaunchView.swift in Sources */,
 				D205A4362C6F561A00891867 /* NoConnectionModule.swift in Sources */,
+				D2904B9E2C7E6A1500798E8D /* AppStrings.generated.swift in Sources */,
 				D231A37F2C74995F004FECC8 /* SuccessModule.swift in Sources */,
 				D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */,
 				D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */,
@@ -428,6 +448,17 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D2904B962C7E04E900798E8D /* Localize.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2904B972C7E04E900798E8D /* en */,
+			);
+			name = Localize.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		D2ABB5462C6E234900D1A3BE /* Debug */ = {
