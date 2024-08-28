@@ -18,7 +18,7 @@ public enum AppLocale {
         public static let defaultTable: String = "Localizable"
     }
 
-    // @AppStorage(DefaultsKeys.Keys.currentLocalize.rawValue)
+//    @AppStorage(DefaultsKeys.Keys.currentLocalize.rawValue)
     private static var currentLocalize: LocalizeKeys = .english
 
     public static var currentLanguageCode: String { currentLocalize.code }
@@ -27,6 +27,27 @@ public enum AppLocale {
   public enum General {
       /// Test Task
       public static var appName: String { AppLocale.tr("Localize", "general.appName") }
+  }
+
+  public enum NoConnection {
+      /// Try again
+      public static var buttonText: String { AppLocale.tr("Localize", "noConnection.buttonText") }
+      /// There is no internet connection
+      public static var noConnection: String { AppLocale.tr("Localize", "noConnection.noConnection") }
+  }
+
+  public enum SignUpFailed {
+      /// Try again
+      public static var buttonText: String { AppLocale.tr("Localize", "signUpFailed.buttonText") }
+      /// That email is already registered
+      public static var emailAlready: String { AppLocale.tr("Localize", "signUpFailed.emailAlready") }
+  }
+
+  public enum SignUpSuccess {
+      /// Got it
+      public static var buttonText: String { AppLocale.tr("Localize", "signUpSuccess.buttonText") }
+      /// User successfully registered
+      public static var successfully: String { AppLocale.tr("Localize", "signUpSuccess.successfully") }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

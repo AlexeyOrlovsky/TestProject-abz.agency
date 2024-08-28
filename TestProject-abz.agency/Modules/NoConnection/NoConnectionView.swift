@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.NoConnection
 private typealias Module = NoConnectionModule
 private typealias ModuleView = Module.MainView
 
@@ -30,8 +31,8 @@ private extension ModuleView {
     @ViewBuilder func content() -> some View {
         StatusView(
             image: Image("noInternetConnection"),
-            message: "There is no internet connection",
-            buttonText: "Try again",
+            message: Localization.noConnection,
+            buttonText: Localization.buttonText,
             buttonAction: {
                 debugPrint("Try again")
             }
