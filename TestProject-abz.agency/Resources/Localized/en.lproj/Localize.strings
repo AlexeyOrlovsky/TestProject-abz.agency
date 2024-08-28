@@ -16,3 +16,6 @@
 // MARK: - Tab Bar
 "tabBar.tabs.users" = "Users";
 "tabBar.tabs.signUp" = "Sign up";
+
+// MARK: - Users
+"users.notYet" = "There are no users yet";

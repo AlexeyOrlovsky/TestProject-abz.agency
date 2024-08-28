@@ -34,15 +34,19 @@ extension Module {
 
 // MARK: - UsersViewModelProtocol
 protocol UsersViewModelProtocol: ObservableObject {
+    typealias TabState = UsersModule.TabState
+    
+    var uiState: TabState { get }
+    
     func onAppear()
 }
 
-// MARK: - HomeModuleInput
+// MARK: - UsersModuleInput
 protocol UsersModuleInput: AnyObject {
     func configure(_ data: UsersModule.ConfigData)
 }
 
-// MARK: - HomeModuleOutput
+// MARK: - UsersModuleOutput
 protocol UsersModuleOutput: AnyObject {
     func usersModule(fetchData isLoading: Bool)
 }

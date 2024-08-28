@@ -58,6 +58,11 @@ public enum AppLocale {
         public static var users: String { AppLocale.tr("Localize", "tabBar.tabs.users") }
     }
   }
+
+  public enum Users {
+      /// There are no users yet
+      public static var notYet: String { AppLocale.tr("Localize", "users.notYet") }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

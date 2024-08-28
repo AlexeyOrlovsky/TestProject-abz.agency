@@ -14,6 +14,7 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
+        @Published private(set) var uiState: TabState = .withData
         
         // MARK: - Dependencies
         weak var moduleOutput: ModuleOutput?
