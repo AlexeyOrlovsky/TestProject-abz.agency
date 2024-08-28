@@ -17,8 +17,8 @@ extension Module {
         
         // MARK: - Private
         @Inject(\.launchModule) private var launchModule
-        @Inject(\.noConnectionModule) private var noConnectionModule
         @Inject(\.tabBarModule) private var tabBarModule
+        @Inject(\.noConnectionModule) private var noConnectionModule
         @Inject(\.signUpSuccessModule) private var signUpSuccessModule
         @Inject(\.signUpFailedModule) private var signUpFailedModule
         

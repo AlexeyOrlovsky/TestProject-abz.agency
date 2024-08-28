@@ -12,3 +12,10 @@
 // MARK: - Sign Up Failed
 "signUpFailed.emailAlready" = "That email is already registered";
 "signUpFailed.buttonText" = "Try again";
+
+// MARK: - Tab Bar
+"tabBar.tabs.users" = "Users";
+"tabBar.tabs.signUp" = "Sign up";
+
+// MARK: - Users
+"users.notYet" = "There are no users yet";

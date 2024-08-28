@@ -16,7 +16,7 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
-        @Published var selectedTab: TabKeys = .home
+        @Published var selectedTab: TabKeys = .users
         @Published var errorToastData: (text: String, binding: Binding<Bool>) = ("", .constant(false))
         @Published var isLoading: Bool = false
 

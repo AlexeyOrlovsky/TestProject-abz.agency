@@ -18,10 +18,12 @@ extension Module {
         @EnvironmentObject var navigator: AppFlowNavigator
 
         // MARK: - Screens
+        private let usersModule: UsersModule
 
         // MARK: - Init
-        init(viewModel: ViewModel) {
+        init(viewModel: ViewModel, usersModule: UsersModule) {
             self._viewModel = .init(wrappedValue: viewModel)
+            self.usersModule = usersModule
 
             configureTabBar()
         }
@@ -81,15 +83,15 @@ private extension ModuleView {
     @ViewBuilder func content() -> some View {
         VStack {
             TabView(selection: $viewModel.selectedTab) {
-//                self.usersModule.assemble { input in
-//                    input.configure(.init())
-//                    return viewModel as? UsersModule.ModuleOutput
-//                }
-//                .tabItem { tabItem(key: .users) }
+                self.usersModule.assemble { input in
+                    input.configure(.init())
+                    return viewModel as? UsersModule.ModuleOutput
+                }
+                .tabItem { tabItem(key: .users) }
 //                self.signUpModule.assemble()
 //                    .tabItem { tabItem(key: .signUp) }
             }
-            // .accentColor(primary.colorSwiftUI)
+            .accentColor(Color("SecondaryColor"))
         }
     }
 
