@@ -49,6 +49,15 @@ public enum AppLocale {
       /// User successfully registered
       public static var successfully: String { AppLocale.tr("Localize", "signUpSuccess.successfully") }
   }
+
+  public enum TabBar {
+    public enum Tabs {
+        /// Sign up
+        public static var signUp: String { AppLocale.tr("Localize", "tabBar.tabs.signUp") }
+        /// Users
+        public static var users: String { AppLocale.tr("Localize", "tabBar.tabs.users") }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name

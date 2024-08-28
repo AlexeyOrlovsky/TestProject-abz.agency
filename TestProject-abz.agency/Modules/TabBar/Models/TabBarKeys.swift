@@ -7,14 +7,18 @@
 
 import UIKit
 
-//private typealias Localization = AppLocale.TabBar.Tabs
+private typealias Localization = AppLocale.TabBar.Tabs
 private typealias Module = TabBarModule
 
 extension Module {
     struct TabKeys: Identifiable, Hashable {
-        static let users: Self = .init(title: "Users", image: UIImage(systemName: "person.3.sequence.fill") ?? .init())
-        static let signUp: Self = .init(title: "Sign up", image: UIImage(systemName: "person.crop.circle.fill.badge.plus/") ?? .init())
-
+        static let users: Self = .init(
+            title: Localization.users,
+            image: UIImage(systemName: "person.3.sequence.fill") ?? .init())
+        static let signUp: Self = .init(
+            title: Localization.signUp,
+            image: UIImage(systemName: "person.crop.circle.fill.badge.plus") ?? .init())
+        
         var id: Self { self }
         var title: String
         var image: UIImage

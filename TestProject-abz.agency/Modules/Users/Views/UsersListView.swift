@@ -21,8 +21,8 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
-                .padding(.top, 40)
-                .padding(.leading, 8)
+                .padding(.top, 36)
+                .padding([.leading, .trailing], 16)
         }
     }
 }
@@ -42,16 +42,7 @@ private extension CurrentView {
                 .listRowInsets(EdgeInsets())
         }
         .scrollIndicators(.hidden)
-        .safeAreaInset(edge: .bottom) {
-            Spacer()
-                .frame(height: 32)
-        }
         .listStyle(.plain)
-        .cornerRadius(12)
-        .clipped()
-        // .backgroundWhiteRoundedRectangle(corners: [.topLeft, .topRight])
-        .ignoresSafeArea()
-
     }
 
     @ViewBuilder func rowView(model: UsersModule.UsersModel) -> some View {
@@ -59,7 +50,7 @@ private extension CurrentView {
             Module.UsersListRowView(model: model)
             if model != models.last {
                 Rectangle()
-                    .fill(.gray)
+                    .fill(Color("SeparatorColor"))
                     .padding(.leading, 84)
                     .frame(maxWidth: .infinity)
                     .frame(height: 1)

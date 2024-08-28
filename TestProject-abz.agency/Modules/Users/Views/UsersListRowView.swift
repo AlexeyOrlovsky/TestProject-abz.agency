@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// private typealias Localization = AppLocale.Users
 private typealias Module = UsersModule
 private typealias CurrentView = Module.UsersListRowView
 
@@ -21,7 +20,8 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
-                .padding(16)
+                .padding([.leading, .trailing], 16)
+                .padding([.top, .bottom], 24)
         }
     }
 }
@@ -34,30 +34,29 @@ private extension CurrentView {
                 Image(systemName: model.photo)
                     .resizable()
                     .frame(width: 50, height: 50)
+                    .clipShape(Circle())
                 
-                VStack(alignment: .leading, spacing: 12) {
-                    VStack(alignment: .leading, spacing: 8) {
+                VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(model.name)
-                            .font(.title3)
+                            .appFontRegularSize18()
                         Text(model.position)
+                            .appFontRegularSize14()
                             .foregroundColor(.gray)
                     }
                     
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: 4) {
                         Text(model.email)
+                            .appFontRegularSize14()
                             .lineLimit(1)
                         Text(model.phone)
+                            .appFontRegularSize14()
                     }
                 }
-                
                 Spacer()
             }
         }
     }
-}
-
-// MARK: - Private Methods
-private extension CurrentView {
 }
 
 // MARK: - Previews
@@ -68,11 +67,11 @@ struct UsersListRowView_Previews: PreviewProvider {
             CurrentView(
                 model: .init(
                     id: 1,
-                    name: "Akela Versale",
-                    email: "morrterry@gmail.com",
-                    phone: "+36 (087) 849 37 34",
+                    name: "Malcolm Bailey",
+                    email: "jany_murazik51@hotmail.com",
+                    phone: "+38 (098) 278 76 24",
                     position_id: 1,
-                    position: "Frontend Developer",
+                    position: "Frontend developer",
                     photo: "person.fill"
                 )
             )
