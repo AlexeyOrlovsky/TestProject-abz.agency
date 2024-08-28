@@ -19,7 +19,6 @@ extension Module {
         @Inject(\.launchModule) private var launchModule
         @Inject(\.tabBarModule) private var tabBarModule
         @Inject(\.noConnectionModule) private var noConnectionModule
-        @Inject(\.tabBarModule) private var tabBarModule
         @Inject(\.signUpSuccessModule) private var signUpSuccessModule
         @Inject(\.signUpFailedModule) private var signUpFailedModule
         
