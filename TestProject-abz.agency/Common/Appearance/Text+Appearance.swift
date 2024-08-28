@@ -2,7 +2,7 @@
 //  Text+Appearance.swift
 //  TestProject-abz.agency
 //
-//  Created by Алексей Орловский on 22.08.2024.
+//  Created by Алексей Орловский on 28.08.2024.
 //
 
 import SwiftUI
