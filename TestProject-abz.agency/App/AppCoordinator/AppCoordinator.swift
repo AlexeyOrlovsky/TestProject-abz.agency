@@ -18,6 +18,7 @@ extension Module {
         // MARK: - Private
         @Inject(\.launchModule) private var launchModule
         @Inject(\.noConnectionModule) private var noConnectionModule
+        @Inject(\.tabBarModule) private var tabBarModule
         @Inject(\.signUpSuccessModule) private var signUpSuccessModule
         @Inject(\.signUpFailedModule) private var signUpFailedModule
         
@@ -32,6 +33,8 @@ extension Module {
                     signUpSuccessModule.assemble()
                 case .signUpFailed:
                     signUpFailedModule.assemble()
+                case .tabBar:
+                    tabBarModule.assemble()
                 }
             }
         }

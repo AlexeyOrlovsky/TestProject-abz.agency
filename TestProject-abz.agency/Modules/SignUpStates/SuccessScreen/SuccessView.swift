@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.SignUpSuccess
 private typealias Module = SuccessModule
 private typealias ModuleView = Module.MainView
 
@@ -31,8 +32,8 @@ private extension ModuleView {
         ZStack {
             StatusView(
                 image: Image("signUpSuccess"),
-                message: "User successfully registered",
-                buttonText: "Got it",
+                message: Localization.successfully,
+                buttonText: Localization.buttonText,
                 buttonAction: {
                     debugPrint("Got it")
                 }

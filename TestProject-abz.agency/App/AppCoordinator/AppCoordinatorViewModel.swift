@@ -21,6 +21,7 @@ extension Module {
         enum Screen {
             case launch
             
+            case tabBar
             case noConnection
             case signUpSuccess
             case signUpFailed

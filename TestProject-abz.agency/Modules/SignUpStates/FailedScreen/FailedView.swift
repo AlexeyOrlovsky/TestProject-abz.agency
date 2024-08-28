@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.SignUpFailed
 private typealias Module = FailedModule
 private typealias ModuleView = Module.MainView
 
@@ -31,8 +32,8 @@ private extension ModuleView {
         ZStack {
             StatusView(
                 image: Image("signUpFailed"),
-                message: "That email is already registered",
-                buttonText: "Try again",
+                message: Localization.emailAlready,
+                buttonText: Localization.buttonText,
                 buttonAction: {
                     debugPrint("Try again")
                 }

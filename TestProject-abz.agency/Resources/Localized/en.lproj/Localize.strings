@@ -1,2 +1,14 @@
 // MARK: - General
 "general.appName" = "Test Task";
+
+// MARK: - No connection
+"noConnection.noConnection" = "There is no internet connection";
+"noConnection.buttonText" = "Try again";
+
+// MARK: - Sign Up Success
+"signUpSuccess.successfully" = "User successfully registered";
+"signUpSuccess.buttonText" = "Got it";
+
+// MARK: - Sign Up Failed
+"signUpFailed.emailAlready" = "That email is already registered";
+"signUpFailed.buttonText" = "Try again";
