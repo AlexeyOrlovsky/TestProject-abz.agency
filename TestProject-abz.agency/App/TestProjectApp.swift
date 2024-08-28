@@ -16,6 +16,13 @@ struct TestProjectApp: App {
     var body: some Scene {
         WindowGroup {
             appCoordinator.assemble()
+                .onAppear {
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                        windowScene.windows.forEach { window in
+                            window.overrideUserInterfaceStyle = .light
+                        }
+                    }
+                }
         }
     }
 }
