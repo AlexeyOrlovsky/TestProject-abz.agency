@@ -12,8 +12,8 @@ private typealias Module = TabBarModule
 
 extension Module {
     struct TabKeys: Identifiable, Hashable {
-        static let home: Self = .init(title: "Users", image: UIImage(systemName: "person.3.sequence.fill") ?? .init())
-        static let more: Self = .init(title: "Sign up", image: UIImage(systemName: "person.crop.circle.fill.badge.plus/") ?? .init())
+        static let users: Self = .init(title: "Users", image: UIImage(systemName: "person.3.sequence.fill") ?? .init())
+        static let signUp: Self = .init(title: "Sign up", image: UIImage(systemName: "person.crop.circle.fill.badge.plus/") ?? .init())
 
         var id: Self { self }
         var title: String

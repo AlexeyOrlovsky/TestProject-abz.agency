@@ -11,6 +11,8 @@ import Factory
 // MARK: - TabBarModule
 struct TabBarModule {
     typealias ViewModelProtocol = TabBarViewModelProtocol
+    
+    @Injected(\.usersModule) private var usersModule
 
     // @Injected(\.statisticsRepository) private var statisticsRepository
     // @Injected(\.toastsRepository) private var toastsRepository
@@ -18,7 +20,7 @@ struct TabBarModule {
     func assemble() -> some View {
         let viewModel: ViewModel = .init() // (statisticsRepository: statisticsRepository, toastsRepository: toastsRepository)
 
-        return MainView(viewModel: viewModel)
+        return MainView(viewModel: viewModel, usersModule: usersModule)
     }
 }
 

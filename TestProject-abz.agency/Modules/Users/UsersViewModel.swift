@@ -14,6 +14,9 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
+        
+        // MARK: - Dependencies
+        weak var moduleOutput: ModuleOutput?
 
         // MARK: - Private Properties
 
@@ -36,6 +39,11 @@ extension Module {
 
         // MARK: - Tap Actions
     }
+}
+
+// MARK: - ModuleInput
+extension ViewModel: Module.ModuleInput {
+    func configure(_ data: UsersModule.ConfigData) { }
 }
 
 // MARK: - Private Methods
