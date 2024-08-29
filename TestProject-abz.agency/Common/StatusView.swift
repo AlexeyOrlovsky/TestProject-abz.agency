@@ -64,7 +64,7 @@ private extension CurrentView {
 struct StatusView_Previews: PreviewProvider {
     static var previews: some View {
         StatusView(
-            image: Image("noInternetConnection"),
+            image: Image(AppAssets.noInternetConnection.name),
             message: "There is no internet connection",
             buttonText: "Try again",
             buttonAction: {

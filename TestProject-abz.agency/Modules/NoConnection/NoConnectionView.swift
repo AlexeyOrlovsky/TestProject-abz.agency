@@ -30,7 +30,7 @@ extension Module {
 private extension ModuleView {
     @ViewBuilder func content() -> some View {
         StatusView(
-            image: Image("noInternetConnection"),
+            image: Image(AppAssets.noInternetConnection.name),
             message: Localization.noConnection,
             buttonText: Localization.buttonText,
             buttonAction: {

@@ -31,7 +31,7 @@ private extension ModuleView {
     @ViewBuilder func content() -> some View {
         ZStack {
             StatusView(
-                image: Image("signUpSuccess"),
+                image: Image(AppAssets.signUpSuccess.name),
                 message: Localization.successfully,
                 buttonText: Localization.buttonText,
                 buttonAction: {
@@ -57,7 +57,7 @@ private extension ModuleView {
         Button {
             //
         } label: {
-            Image("close")
+            Image(AppAssets.close.name)
         }
     }
 }

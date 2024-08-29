@@ -31,7 +31,7 @@ private extension ModuleView {
     @ViewBuilder func content() -> some View {
         ZStack {
             StatusView(
-                image: Image("signUpFailed"),
+                image: Image(AppAssets.signUpFailed.name),
                 message: Localization.emailAlready,
                 buttonText: Localization.buttonText,
                 buttonAction: {
@@ -57,7 +57,7 @@ private extension ModuleView {
         Button {
             //
         } label: {
-            Image("close")
+            Image(AppAssets.close.name)
         }
     }
 }

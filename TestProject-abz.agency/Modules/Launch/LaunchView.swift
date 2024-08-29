@@ -40,7 +40,7 @@ private extension ModuleView {
             Color(AppColors.primaryColor.colorSwiftUI)
                 .edgesIgnoringSafeArea(.all)
             VStack {
-                Image("Launch.logo")
+                Image(AppAssets.launchLogo.name)
             }
         }
     }
