@@ -21,9 +21,9 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
-                .frame(height: 56)
+                .frame(height: 48)
                 .frame(maxWidth: .infinity)
-                .padding([.leading, .trailing], 16)
+                .padding([.leading, .trailing], 8)
         }
     }
 }

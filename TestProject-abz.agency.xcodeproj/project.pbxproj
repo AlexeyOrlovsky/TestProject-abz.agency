@@ -27,6 +27,7 @@
 		D20A6F8E2C7F5C2A0055B5D8 /* UsersEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A6F8D2C7F5C2A0055B5D8 /* UsersEmptyView.swift */; };
 		D20A6F902C7F72000055B5D8 /* UsersStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A6F8F2C7F72000055B5D8 /* UsersStates.swift */; };
 		D20A6F972C7F908C0055B5D8 /* Text+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A6F962C7F908C0055B5D8 /* Text+Appearance.swift */; };
+		D20A6F992C7FA50F0055B5D8 /* SignUpUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A6F982C7FA50F0055B5D8 /* SignUpUploadView.swift */; };
 		D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35A2C7348F0004FECC8 /* SignUpModule.swift */; };
 		D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35B2C7348F0004FECC8 /* SignUpView.swift */; };
 		D231A35F2C7348F0004FECC8 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */; };
@@ -103,6 +104,7 @@
 		D20A6F8D2C7F5C2A0055B5D8 /* UsersEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersEmptyView.swift; sourceTree = "<group>"; };
 		D20A6F8F2C7F72000055B5D8 /* UsersStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStates.swift; sourceTree = "<group>"; };
 		D20A6F962C7F908C0055B5D8 /* Text+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Appearance.swift"; sourceTree = "<group>"; };
+		D20A6F982C7FA50F0055B5D8 /* SignUpUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUploadView.swift; sourceTree = "<group>"; };
 		D231A35A2C7348F0004FECC8 /* SignUpModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModule.swift; sourceTree = "<group>"; };
 		D231A35B2C7348F0004FECC8 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 			isa = PBXGroup;
 			children = (
 				D2904B822C7BC3B800798E8D /* SignUpFormView.swift */,
+				D20A6F982C7FA50F0055B5D8 /* SignUpUploadView.swift */,
 				D2904B862C7BC75200798E8D /* SelectPositionListView.swift */,
 				D2904B842C7BC5A500798E8D /* SelectPositionListRowView.swift */,
 			);
@@ -630,6 +633,7 @@
 				D231A3AD2C77FE8B004FECC8 /* UsersListView.swift in Sources */,
 				D211D6262C81D05100FE6035 /* Log.swift in Sources */,
 				D231A3872C749E73004FECC8 /* FailedView.swift in Sources */,
+				D20A6F992C7FA50F0055B5D8 /* SignUpUploadView.swift in Sources */,
 				D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */,
 				D211D61A2C80AD4800FE6035 /* AppColors.generated.swift in Sources */,
 				D2904B622C7A372300798E8D /* TabBarKeys.swift in Sources */,

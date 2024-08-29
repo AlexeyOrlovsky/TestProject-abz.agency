@@ -39,15 +39,39 @@ extension Module {
 // MARK: - Private Layout
 private extension ModuleView {
     @ViewBuilder func content() -> some View {
-        VStack(spacing: .zero) {
-            VStack(spacing: 24) {
-                Module.FormView(
-                    name: $name,
-                    email: $email,
-                    phone: $phone
-                )
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 12) {
+                VStack(spacing: 24) {
+                    Module.FormView(
+                        name: $name,
+                        email: $email,
+                        phone: $phone
+                    )
                     .padding(.top, 32)
-                Module.ListView(localizations: [
+                    positionView()
+                }
+                Spacer()
+                VStack(spacing: 18) {
+                    Module.SignUpUploadView(
+                        text: "Upload your photo",
+                        buttonAction: {}
+                    )
+                    AppCapsuleButton(
+                        label: "Sign up",
+                        action: {}
+                    )
+                    .padding(.bottom, 24)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder func positionView() -> some View {
+        VStack(alignment: .leading) {
+            Text("Select your position")
+                .appFontRegularSize18()
+            Module.ListView(
+                localizations: [
                     "Frontend developer",
                     "Backend developer",
                     "Designer",
@@ -55,13 +79,6 @@ private extension ModuleView {
                 ], selectedIndex: { index in
                     debugPrint("\(index)")
                 }, state: state)
-            }
-            Spacer()
-            AppCapsuleButton(
-                label: "Sign up",
-                action: {}
-            )
-            .padding(.bottom, 94)
         }
     }
 }

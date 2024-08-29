@@ -30,13 +30,11 @@ extension Module {
 // MARK: - Private Layout
 private extension CurrentView {
     @ViewBuilder func content() -> some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                ForEachWithIndex(localizations) { index, item in
-                    Module.ListRowView(item: item, isSelected: self._selectedIndex == index) {
-                        self._selectedIndex = index
-                        selectedIndex(index)
-                    }
+        VStack(spacing: 8) {
+            ForEachWithIndex(localizations) { index, item in
+                Module.ListRowView(item: item, isSelected: self._selectedIndex == index) {
+                    self._selectedIndex = index
+                    selectedIndex(index)
                 }
             }
         }
