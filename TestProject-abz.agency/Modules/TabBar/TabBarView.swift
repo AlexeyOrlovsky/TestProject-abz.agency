@@ -91,7 +91,7 @@ private extension ModuleView {
 //                self.signUpModule.assemble()
 //                    .tabItem { tabItem(key: .signUp) }
             }
-            .accentColor(Color("SecondaryColor"))
+            .accentColor(AppColors.secondaryColor.colorSwiftUI)
         }
     }
 

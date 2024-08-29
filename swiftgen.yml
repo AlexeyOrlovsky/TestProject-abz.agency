@@ -15,3 +15,11 @@ strings:
         params:
           enumName: AppLocale
           publicAccess: true
+xcassets:
+  - inputs: TestProject-abz.agency/Resources/Colors.xcassets
+    outputs:
+      - templatePath: swiftgen_templates/assets/assets.stencil
+        output: TestProject-abz.agency/Resources/Generated/AppColors.generated.swift
+        params:
+          enumName: AppColors
+          publicAccess: true

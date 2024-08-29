@@ -44,7 +44,7 @@ private extension CurrentView {
                     .foregroundColor(.black)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color("PrimaryColor"))
+                    .background(AppColors.primaryColor.colorSwiftUI)
                     .cornerRadius(35)
             }
             .frame(width: 140, height: 48)
