@@ -18,7 +18,6 @@ public enum AppLocale {
         public static let defaultTable: String = "Localizable"
     }
 
-//    @AppStorage(DefaultsKeys.Keys.currentLocalize.rawValue)
     private static var currentLocalize: LocalizeKeys = .english
 
     public static var currentLanguageCode: String { currentLocalize.code }
