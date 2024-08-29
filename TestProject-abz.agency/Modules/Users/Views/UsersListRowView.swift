@@ -16,6 +16,7 @@ extension Module {
         let model: UsersModel
         
         // MARK: - Private Properties
+        private let textColor = Color(AppColors.textBlack.colorSwiftUI)
         
         // MARK: - Body
         var body: some View {
@@ -40,17 +41,20 @@ private extension CurrentView {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(model.name)
                             .appFontRegularSize18()
+                            .foregroundStyle(textColor)
                         Text(model.position)
                             .appFontRegularSize14()
-                            .foregroundColor(.gray)
+                            .foregroundColor(AppColors.textPrimary.colorSwiftUI)
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(model.email)
                             .appFontRegularSize14()
+                            .foregroundStyle(textColor)
                             .lineLimit(1)
                         Text(model.phone)
                             .appFontRegularSize14()
+                            .foregroundStyle(textColor)
                     }
                 }
                 Spacer()

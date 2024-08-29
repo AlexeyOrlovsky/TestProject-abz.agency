@@ -18,6 +18,7 @@ struct StatusView: View {
     var buttonAction: () -> Void
     
     // MARK: - Private Properties
+    private let textColor = Color(AppColors.textBlack.colorSwiftUI)
     
     // MARK: - Body
     var body: some View {
@@ -34,16 +35,17 @@ private extension CurrentView {
                 .scaledToFit()
                 .frame(width: 200, height: 200)
             Text(message)
-                .font(.title3)
+                .appFontRegularSize20()
+                .foregroundStyle(textColor)
                 .multilineTextAlignment(.center)
             Button(
                 action: buttonAction
             ) {
                 Text(buttonText)
-                    .appFontRegularSize20()
-                    .foregroundColor(.black)
+                    .appFontRegularSize18()
                     .padding()
                     .frame(maxWidth: .infinity)
+                    .foregroundColor(textColor)
                     .background(AppColors.primaryColor.colorSwiftUI)
                     .cornerRadius(35)
             }
