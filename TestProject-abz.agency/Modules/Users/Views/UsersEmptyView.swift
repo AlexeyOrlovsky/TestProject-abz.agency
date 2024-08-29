@@ -33,7 +33,7 @@ private extension CurrentView {
     
     @ViewBuilder func usersEmptyView() -> some View {
         VStack(spacing: 24) {
-            Image("UsersEmpty")
+            Image(AppAssets.usersEmpty.name)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 200, height: 200)

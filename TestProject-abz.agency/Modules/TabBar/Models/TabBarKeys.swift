@@ -14,10 +14,10 @@ extension Module {
     struct TabKeys: Identifiable, Hashable {
         static let users: Self = .init(
             title: Localization.users,
-            image: UIImage(systemName: "person.3.sequence.fill") ?? .init())
+            image: AppAssets.person3SequenceFill ?? .init())
         static let signUp: Self = .init(
             title: Localization.signUp,
-            image: UIImage(systemName: "person.crop.circle.fill.badge.plus") ?? .init())
+            image: AppAssets.personCropCircleFillBadgePlus ?? .init())
         
         var id: Self { self }
         var title: String
