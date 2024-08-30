@@ -29,6 +29,11 @@
 		D211D61A2C80AD4800FE6035 /* AppColors.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D6182C80AD4800FE6035 /* AppColors.generated.swift */; };
 		D211D61C2C80C69A00FE6035 /* AppAssets.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D61B2C80C69A00FE6035 /* AppAssets.generated.swift */; };
 		D211D61E2C81141100FE6035 /* AppAssets+SystemImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D61D2C81141100FE6035 /* AppAssets+SystemImage.swift */; };
+		D211D6212C81D00B00FE6035 /* NetworkMonitorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D6202C81D00B00FE6035 /* NetworkMonitorProtocol.swift */; };
+		D211D6232C81D02200FE6035 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D6222C81D02200FE6035 /* NetworkMonitor.swift */; };
+		D211D6262C81D05100FE6035 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D6252C81D05100FE6035 /* Log.swift */; };
+		D211D6282C81D07300FE6035 /* BuildBlocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D6272C81D07300FE6035 /* BuildBlocks.swift */; };
+		D211D62B2C81D0C000FE6035 /* InterfaceType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D211D62A2C81D0C000FE6035 /* InterfaceType+Extension.swift */; };
 		D231A37F2C74995F004FECC8 /* SuccessModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37C2C74995F004FECC8 /* SuccessModule.swift */; };
 		D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37D2C74995F004FECC8 /* SuccessView.swift */; };
 		D231A3812C74995F004FECC8 /* SuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A37E2C74995F004FECC8 /* SuccessViewModel.swift */; };
@@ -79,6 +84,11 @@
 		D211D6182C80AD4800FE6035 /* AppColors.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.generated.swift; sourceTree = "<group>"; };
 		D211D61B2C80C69A00FE6035 /* AppAssets.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppAssets.generated.swift; sourceTree = "<group>"; };
 		D211D61D2C81141100FE6035 /* AppAssets+SystemImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppAssets+SystemImage.swift"; sourceTree = "<group>"; };
+		D211D6202C81D00B00FE6035 /* NetworkMonitorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitorProtocol.swift; sourceTree = "<group>"; };
+		D211D6222C81D02200FE6035 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		D211D6252C81D05100FE6035 /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		D211D6272C81D07300FE6035 /* BuildBlocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildBlocks.swift; sourceTree = "<group>"; };
+		D211D62A2C81D0C000FE6035 /* InterfaceType+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InterfaceType+Extension.swift"; sourceTree = "<group>"; };
 		D231A37C2C74995F004FECC8 /* SuccessModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessModule.swift; sourceTree = "<group>"; };
 		D231A37D2C74995F004FECC8 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
 		D231A37E2C74995F004FECC8 /* SuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewModel.swift; sourceTree = "<group>"; };
@@ -154,8 +164,12 @@
 		D205A42C2C6EB1D400891867 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D211D61F2C81CFFC00FE6035 /* NetworkMonitor */,
+				D211D6242C81D04600FE6035 /* Logger */,
+				D211D6292C81D0A900FE6035 /* Network+Extension */,
 				D205A42D2C6EB1ED00891867 /* CancelBag.swift */,
 				D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */,
+				D211D6272C81D07300FE6035 /* BuildBlocks.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -177,6 +191,31 @@
 				D205A43C2C6F643500891867 /* StatusView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		D211D61F2C81CFFC00FE6035 /* NetworkMonitor */ = {
+			isa = PBXGroup;
+			children = (
+				D211D6202C81D00B00FE6035 /* NetworkMonitorProtocol.swift */,
+				D211D6222C81D02200FE6035 /* NetworkMonitor.swift */,
+			);
+			path = NetworkMonitor;
+			sourceTree = "<group>";
+		};
+		D211D6242C81D04600FE6035 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				D211D6252C81D05100FE6035 /* Log.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		D211D6292C81D0A900FE6035 /* Network+Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D211D62A2C81D0C000FE6035 /* InterfaceType+Extension.swift */,
+			);
+			path = "Network+Extension";
 			sourceTree = "<group>";
 		};
 		D22226A12C6E2B2A0042334B /* Resources */ = {
@@ -472,11 +511,13 @@
 			files = (
 				D231A3862C749E73004FECC8 /* FailedModule.swift in Sources */,
 				D231A3AD2C77FE8B004FECC8 /* UsersListView.swift in Sources */,
+				D211D6262C81D05100FE6035 /* Log.swift in Sources */,
 				D231A3872C749E73004FECC8 /* FailedView.swift in Sources */,
 				D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */,
 				D211D61A2C80AD4800FE6035 /* AppColors.generated.swift in Sources */,
 				D2904B622C7A372300798E8D /* TabBarKeys.swift in Sources */,
 				D2904B5E2C7A370800798E8D /* TabBarView.swift in Sources */,
+				D211D6212C81D00B00FE6035 /* NetworkMonitorProtocol.swift in Sources */,
 				D2904B5F2C7A370800798E8D /* TabBarViewModel.swift in Sources */,
 				D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */,
 				D205A4112C6E6FAE00891867 /* LaunchModule.swift in Sources */,
@@ -499,17 +540,20 @@
 				D205A4182C6E703C00891867 /* AppCoordinatorModule.swift in Sources */,
 				D205A41C2C6E704900891867 /* AppRoutes.swift in Sources */,
 				D205A4192C6E703C00891867 /* AppCoordinator.swift in Sources */,
+				D211D6232C81D02200FE6035 /* NetworkMonitor.swift in Sources */,
 				D231A39D2C7784A0004FECC8 /* UsersListRowView.swift in Sources */,
 				D205A4242C6E727F00891867 /* Container.swift in Sources */,
 				D231A3982C778472004FECC8 /* UsersModule.swift in Sources */,
 				D231A3992C778472004FECC8 /* UsersView.swift in Sources */,
 				D231A39A2C778472004FECC8 /* UsersViewModel.swift in Sources */,
+				D211D62B2C81D0C000FE6035 /* InterfaceType+Extension.swift in Sources */,
 				D205A42E2C6EB1ED00891867 /* CancelBag.swift in Sources */,
 				D205A41A2C6E703C00891867 /* AppCoordinatorViewModel.swift in Sources */,
 				D231A3A02C778509004FECC8 /* UsersModel.swift in Sources */,
 				D231A3932C777DBC004FECC8 /* Text+Appearance.swift in Sources */,
 				D205A4292C6E72D200891867 /* RestContainer.swift in Sources */,
 				D20A6F902C7F72000055B5D8 /* UsersStates.swift in Sources */,
+				D211D6282C81D07300FE6035 /* BuildBlocks.swift in Sources */,
 				D205A43D2C6F643500891867 /* StatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
