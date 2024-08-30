@@ -14,19 +14,22 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
+        @Published private(set) var isConnected: Bool = false
 
         // MARK: - Private Properties
 
         // MARK: - Services
 
         // MARK: - Managers
+        private let networkMonitor: NetworkMonitorProtocol
 
         // MARK: - Helpers
         private var cancellable: CancelBag = .init()
 
         // MARK: - Init
-        init(
+        init(networkMonitor: NetworkMonitorProtocol
         ) {
+            self.networkMonitor = networkMonitor
         }
 
         // MARK: - Lifecycle
@@ -35,6 +38,11 @@ extension Module {
         }
 
         // MARK: - Tap Actions
+        func connectionState() {
+            if networkMonitor.isConnected {
+                isConnected = true
+            }
+        }
     }
 }
 

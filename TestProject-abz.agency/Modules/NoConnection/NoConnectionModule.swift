@@ -10,9 +10,11 @@ import SwiftUI
 // MARK: - NoConnectionModule
 struct NoConnectionModule {
     typealias ViewModelProtocol = NoConnectionViewModelProtocol
+    
+    @Inject(\.networkMonitor) private var networkMonitor
 
     func assemble() -> some View {
-        let viewModel: ViewModel = .init()
+        let viewModel: ViewModel = .init(networkMonitor: networkMonitor)
 
         return MainView(viewModel: viewModel)
     }
@@ -20,5 +22,8 @@ struct NoConnectionModule {
 
 // MARK: - NoConnectionViewModelProtocol
 protocol NoConnectionViewModelProtocol: ObservableObject {
+    var isConnected: Bool { get }
+    
+    func connectionState()
     func onAppear()
 }
