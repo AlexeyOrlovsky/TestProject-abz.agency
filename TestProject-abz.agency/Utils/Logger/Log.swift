@@ -30,7 +30,7 @@ public struct Log: LoggerProtocol {
     }
 
     fileprivate static let `default`: Log = .init( // swiftlint:disable:this strict_fileprivate
-        subsystem: "com.lottov.ANYApp",
+        subsystem: "morrterry2021-gmail.com.TestProject-abz-agency", // com.lottov.ANYApp
         category: "default"
     )
 

@@ -53,7 +53,12 @@ private extension ModuleView {
             self.needsToOpenNextScreen = value
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.navigator.routes = [.root(.tabBar)]
+            switch self.viewModel.openNextScreen {
+            case .noConnection:
+                self.navigator.routes = [.root(.noConnection)]
+            case .tabBar:
+                self.navigator.routes = [.root(.tabBar)]
+            }
         }
     }
 }
