@@ -34,7 +34,7 @@ private extension ModuleView {
             message: Localization.noConnection,
             buttonText: Localization.buttonText,
             buttonAction: {
-                debugPrint("Try again")
+                didTapTryAgain()
             }
         )
     }
@@ -42,6 +42,12 @@ private extension ModuleView {
 
 // MARK: - Private Methods
 private extension ModuleView {
+    func didTapTryAgain() {
+        viewModel.connectionState()
+        if viewModel.isConnected {
+            self.navigator.routes = [.root(.tabBar)]
+        }
+    }
 }
 
 // MARK: - Previews

@@ -46,5 +46,10 @@ extension Container: AutoRegistering {
     var signUpFailedModule: Factory<FailedModule> {
         self { .init() }
     }
+    
+    // MARK: - Managers
+    var networkMonitor: Factory<NetworkMonitorProtocol> {
+        self { NetworkMonitor() }
+    }
 }
 

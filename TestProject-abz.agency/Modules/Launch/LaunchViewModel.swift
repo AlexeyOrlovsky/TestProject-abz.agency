@@ -20,6 +20,7 @@ extension Module {
 
         // MARK: - Public Properties
         @Published private(set) var needsToOpenNextScreen: Bool
+        @Published private(set) var openNextScreen: NextScreenStates = .tabBar
 
         // MARK: - Private Properties
         private var timeoutValue: Int16
@@ -28,13 +29,17 @@ extension Module {
         // MARK: - Services
 
         // MARK: - Managers
+        private let networkMonitor: NetworkMonitorProtocol
 
         // MARK: - Helpers
         private var cancellable: CancelBag = .init()
         
         // MARK: - Init
         init(
+            networkMonitor: NetworkMonitorProtocol
         ) {
+            self.networkMonitor = networkMonitor
+            
             self.needsToOpenNextScreen = false
             self.timeoutValue = .zero
             self.timer = Timer.publish(every: 1, on: .main, in: .common)
@@ -62,6 +67,7 @@ private extension ViewModel {
 
                 if self.timeoutValue == Constants.timeoutToClose {
                     self.timer.connect().cancel()
+                    self.checkInternetConnection()
                     self.needsToOpenNextScreen = true
                     return
                 }
@@ -69,5 +75,13 @@ private extension ViewModel {
                 self.timeoutValue += 1
             }
             .store(in: cancellable)
+    }
+    
+    func checkInternetConnection() {
+        if networkMonitor.isConnected {
+            self.openNextScreen = .tabBar
+        } else {
+            self.openNextScreen = .noConnection
+        }
     }
 }
