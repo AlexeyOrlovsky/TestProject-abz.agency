@@ -21,7 +21,7 @@ struct AppCapsuleButton: View {
             case .normal:
                 AppColors.primaryColor.colorSwiftUI
             case .disabled:
-                AppColors.borderGray.colorSwiftUI
+                .borderGray
             }
         }
     }
@@ -59,7 +59,7 @@ private extension CurrentView {
         } label: {
             Text(self.label)
                 .appFontSemiBoldSize18()
-                .foregroundStyle(AppColors.textBlack.colorSwiftUI)
+                .foregroundStyle(.textBlack)
         }
         .buttonStyle(
             Style.Button.CapsuleButton(

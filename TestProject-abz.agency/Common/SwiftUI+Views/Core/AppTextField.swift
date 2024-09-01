@@ -84,8 +84,8 @@ private extension CurrentView {
                 .appFontRegularSize12()
                 .foregroundStyle(
                     state == .default 
-                    ? AppColors.black60.colorSwiftUI
-                    : AppColors.errorRedColor.colorSwiftUI
+                    ? .black60
+                    : .errorRed
                 )
                 .padding([.leading], 4)
             Spacer()

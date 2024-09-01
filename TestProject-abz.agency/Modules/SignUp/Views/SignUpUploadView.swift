@@ -48,7 +48,7 @@ private extension CurrentView {
             HStack {
                 Text(text)
                     .appFontRegularSize16()
-                    .foregroundStyle(AppColors.textPrimary.colorSwiftUI)
+                    .foregroundStyle(.textPrimary)
                 Spacer()
                 Button {
                     //

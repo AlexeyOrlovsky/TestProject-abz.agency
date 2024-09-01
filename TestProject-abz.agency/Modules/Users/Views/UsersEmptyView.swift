@@ -14,7 +14,7 @@ private typealias CurrentView = Module.UsersEmptyView
 extension Module {
     struct UsersEmptyView: View {
         // MARK: - Private Properties
-        private let textColor = Color(AppColors.textBlack.colorSwiftUI)
+        private let textColor = Color(.textBlack)
         
         // MARK: - Body
         var body: some View {

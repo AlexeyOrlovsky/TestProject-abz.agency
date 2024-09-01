@@ -19,7 +19,7 @@ extension Style.Button {
                     RoundedRectangle(cornerRadius: 24)
                         .fill(
                             configuration.isPressed
-                            ? AppColors.darkPrimaryColor.colorSwiftUI
+                            ? .darkPrimary
                             : state.color
                         )
                         .frame(width: 140)
@@ -36,7 +36,7 @@ struct CapsuleButtonDemo_Previews: PreviewProvider {
             ()
         } label: {
             Text("Sign up")
-                .foregroundStyle(AppColors.textBlack.colorSwiftUI)
+                .foregroundStyle(.textBlack)
         }
         .buttonStyle(Style.Button.CapsuleButton(minHeight: 48, state: .normal))
         .padding([.leading, .trailing], 16)

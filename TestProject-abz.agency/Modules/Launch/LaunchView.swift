@@ -37,7 +37,7 @@ extension Module {
 private extension ModuleView {
     @ViewBuilder func content() -> some View {
         ZStack {
-            Color(AppColors.primaryColor.colorSwiftUI)
+            Color(.primary)
                 .edgesIgnoringSafeArea(.all)
             VStack {
                 Image(AppAssets.launchLogo.name)

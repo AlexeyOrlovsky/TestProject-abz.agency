@@ -54,7 +54,7 @@ private extension CurrentView {
             } else {
                 Circle()
                     .strokeBorder(
-                        AppColors.borderGray.colorSwiftUI,
+                        .borderGray,
                         lineWidth: 2
                     )
             }
@@ -66,7 +66,7 @@ private extension CurrentView {
     @ViewBuilder func textView() -> some View {
         Text(item)
             .appFontRegularSize16()
-            .foregroundStyle(AppColors.textBlack.colorSwiftUI)
+            .foregroundStyle(.textBlack)
     }
 }
 
