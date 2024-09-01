@@ -23,7 +23,8 @@ public typealias FontSwift = FontConvertible.FontSwift
 public enum AppFonts {
   public enum Nunito {
     public static let regular = FontConvertible(name: "Nunito-Regular", family: "Nunito", path: "Nunito-Regular.ttf")
-    public static let all: [FontConvertible] = [regular]
+    public static let semiBold = FontConvertible(name: "Nunito-SemiBold", family: "Nunito", path: "Nunito-SemiBold.ttf")
+    public static let all: [FontConvertible] = [regular, semiBold]
   }
   public static let allCustomFonts: [FontConvertible] = [Nunito.all].flatMap { $0 }
   public static func registerAllCustomFonts() {

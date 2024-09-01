@@ -24,6 +24,7 @@ public typealias AssetColorTypeAlias = ColorAsset.Color
 public enum AppColors {
     public static let borderGray = ColorAsset(name: "borderGray")
     public static let secondaryGray = ColorAsset(name: "SecondaryGray")
+    public static let darkPrimaryColor = ColorAsset(name: "DarkPrimaryColor")
     public static let errorRedColor = ColorAsset(name: "ErrorRedColor")
     public static let primaryColor = ColorAsset(name: "PrimaryColor")
     public static let secondaryColor = ColorAsset(name: "SecondaryColor")
@@ -32,6 +33,7 @@ public enum AppColors {
     public static let secondaryDark = ColorAsset(name: "SecondaryDark")
     public static let textBlack = ColorAsset(name: "TextBlack")
     public static let textPrimary = ColorAsset(name: "TextPrimary")
+    public static let subTextPrimary = ColorAsset(name: "subTextPrimary")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

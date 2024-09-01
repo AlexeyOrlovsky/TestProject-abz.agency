@@ -19,11 +19,13 @@ extension Module {
 
         // MARK: - Screens
         private let usersModule: UsersModule
+        private let signUpModule: SignUpModule
 
         // MARK: - Init
-        init(viewModel: ViewModel, usersModule: UsersModule) {
+        init(viewModel: ViewModel, usersModule: UsersModule, signUpModule: SignUpModule) {
             self._viewModel = .init(wrappedValue: viewModel)
             self.usersModule = usersModule
+            self.signUpModule = signUpModule
 
             configureTabBar()
         }
@@ -88,8 +90,8 @@ private extension ModuleView {
                     return viewModel as? UsersModule.ModuleOutput
                 }
                 .tabItem { tabItem(key: .users) }
-//                self.signUpModule.assemble()
-//                    .tabItem { tabItem(key: .signUp) }
+                self.signUpModule.assemble()
+                    .tabItem { tabItem(key: .signUp) }
             }
             .accentColor(AppColors.secondaryColor.colorSwiftUI)
         }

@@ -16,7 +16,7 @@ extension Module {
         let model: UsersModel
         
         // MARK: - Private Properties
-        private let textColor = Color(AppColors.textBlack.colorSwiftUI)
+        private let textColor = Color(.textBlack)
         
         // MARK: - Body
         var body: some View {
@@ -44,7 +44,7 @@ private extension CurrentView {
                             .foregroundStyle(textColor)
                         Text(model.position)
                             .appFontRegularSize14()
-                            .foregroundColor(AppColors.textPrimary.colorSwiftUI)
+                            .foregroundColor(.textPrimary)
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {

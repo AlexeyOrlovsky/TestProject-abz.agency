@@ -13,14 +13,15 @@ struct TabBarModule {
     typealias ViewModelProtocol = TabBarViewModelProtocol
     
     @Injected(\.usersModule) private var usersModule
-
+    @Injected(\.signUpModule) private var signUpModule
+    
     // @Injected(\.statisticsRepository) private var statisticsRepository
     // @Injected(\.toastsRepository) private var toastsRepository
 
     func assemble() -> some View {
         let viewModel: ViewModel = .init() // (statisticsRepository: statisticsRepository, toastsRepository: toastsRepository)
 
-        return MainView(viewModel: viewModel, usersModule: usersModule)
+        return MainView(viewModel: viewModel, usersModule: usersModule, signUpModule: signUpModule)
     }
 }
 
