@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//private typealias Localization = AppLocale.SignUp
+private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
 private typealias CurrentView = Module.FormView
 
@@ -44,22 +44,22 @@ extension CurrentView {
     @ViewBuilder func content() -> some View {
         VStack(spacing: 0) {
             AppTextField(
-                placeholder: "Your Name",
+                placeholder: Localization.nameField,
                 text: $name,
                 state: .default,
                 description: ""
             )
             AppTextField(
-                placeholder: "Email",
+                placeholder: Localization.emailField,
                 text: $email,
                 state: .default,
                 description: ""
             )
             AppTextField(
-                placeholder: "Phone",
+                placeholder: Localization.phoneField,
                 text: $phone,
                 state: .default,
-                description: "+38 (XXX) XXX - XX - XX"
+                description: Localization.phoneNumberExample
             )
         }
     }

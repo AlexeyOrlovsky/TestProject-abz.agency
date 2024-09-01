@@ -7,13 +7,14 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
 private typealias CurrentView = Module.ListRowView
 
 extension Module {
     struct ListRowView: View {
         // MARK: - Public Properties
-        let item: String// LocalizeManager.Localize
+        let item: String
         let isSelected: Bool
         let didTap: () -> Void
 
@@ -46,18 +47,16 @@ private extension CurrentView {
         VStack {
             if isSelected {
                 Circle()
-                    .strokeBorder(.cyan, lineWidth: 6)
+                    .strokeBorder(AppColors.secondaryColor.colorSwiftUI, lineWidth: 5)
                     .background(Circle()
                         .foregroundColor(Color.clear)
-//                        .overlay {
-//                            Circle()
-//                                .foregroundColor(.blue)
-//                                .frame(width: 10, height: 10)
-//                        }
                     )
             } else {
                 Circle()
-                    .strokeBorder(.gray, lineWidth: 2)
+                    .strokeBorder(
+                        AppColors.borderGray.colorSwiftUI,
+                        lineWidth: 2
+                    )
             }
         }
         .frame(width: 20, height: 20)
@@ -66,9 +65,8 @@ private extension CurrentView {
 
     @ViewBuilder func textView() -> some View {
         Text(item)
-            // .appFontRegularSize16()
-            .font(.body)
-            .foregroundStyle(.black)
+            .appFontRegularSize16()
+            .foregroundStyle(AppColors.textBlack.colorSwiftUI)
     }
 }
 
@@ -81,22 +79,22 @@ struct ChooseLanguageListRowView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             CurrentView(
-                item: "Frontend developer",
+                item: Localization.Position.frontend,
                 isSelected: true,
                 didTap: { }
             )
             CurrentView(
-                item: "Backend developer",
+                item: Localization.Position.backend,
                 isSelected: false,
                 didTap: { }
             )
             CurrentView(
-                item: "Designer",
+                item: Localization.Position.designer,
                 isSelected: false,
                 didTap: { }
             )
             CurrentView(
-                item: "QA",
+                item: Localization.Position.qa,
                 isSelected: false,
                 didTap: { }
             )

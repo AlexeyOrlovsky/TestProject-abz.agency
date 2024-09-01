@@ -20,6 +20,7 @@ struct AppTextField: View {
     // MARK: - Public Properties
     let placeholder: String
     let description: String
+    let failedDescription: String
     @Binding var text: String
     var state: TextFieldStates
     
@@ -30,10 +31,12 @@ struct AppTextField: View {
         placeholder: String,
         text: Binding<String>,
         state: TextFieldStates = .default,
-        description: String = "Error"
+        description: String = "",
+        failedDescription: String = ""
     ) {
         self.placeholder = placeholder
         self.description = description
+        self.failedDescription = failedDescription
         self._text = .init(projectedValue: text)
         self.state = state
     }
@@ -55,19 +58,48 @@ private extension CurrentView {
     }
     
     @ViewBuilder func textFieldView() -> some View {
-        TextField(self.placeholder, text: self.$text)
+        ZStack(alignment: .leading) {
+            TextField(
+                self.placeholder,
+                text: self.$text,
+                prompt: Text(self.placeholder)
+                    .foregroundStyle(
+                        state == .failed
+                        ? AppColors.errorRedColor.colorSwiftUI
+                        : .black48
+                    )
+            )
             .textFieldStyle(Style.TextField.WhiteCapsule(state: state))
-            .foregroundStyle(.black)
+            .foregroundStyle(AppColors.textBlack.colorSwiftUI)
+            
+            !text.isEmpty ? subPlaceholder() : nil
+        }
     }
     
     @ViewBuilder func failedDescriptionView() -> some View {
         HStack(spacing: .zero) {
-            Text(self.description)
-                .font(.system(size: 14))
-                .foregroundStyle(.gray.opacity(1.0))
+            Text(state == .default ? self.description : self.failedDescription)
+                .appFontRegularSize12()
+                .foregroundStyle(
+                    state == .default 
+                    ? AppColors.black60.colorSwiftUI
+                    : AppColors.errorRedColor.colorSwiftUI
+                )
                 .padding([.leading], 4)
             Spacer()
         }
+    }
+    
+    @ViewBuilder func subPlaceholder() -> some View {
+        Text(self.placeholder)
+            .appFontRegularSize12()
+            .foregroundStyle(
+                state == .failed
+                ? AppColors.errorRedColor.colorSwiftUI
+                : AppColors.black48.colorSwiftUI
+            )
+            .padding(.leading)
+            .padding(.bottom, 32)
     }
 }
 
@@ -85,6 +117,13 @@ struct AppTextField_Previews: PreviewProvider {
                         placeholder: "Phone",
                         text: $phone,
                         description: "+38 (XXX) XXX - XX - XX"
+                    )
+                    .padding()
+                    CurrentView(
+                        placeholder: "Phone",
+                        text: $phone,
+                        state: .failed,
+                        failedDescription: "Required field"
                     )
                     .padding()
                 }

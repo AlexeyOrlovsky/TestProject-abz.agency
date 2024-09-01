@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
 private typealias CurrentView = Module.SignUpUploadView
 
@@ -47,19 +48,19 @@ private extension CurrentView {
             HStack {
                 Text(text)
                     .appFontRegularSize16()
-                    .foregroundStyle(Color("TextPrimary"))
+                    .foregroundStyle(AppColors.textPrimary.colorSwiftUI)
                 Spacer()
                 Button {
                     //
                 } label: {
-                    Text("Upload")
-                        .foregroundStyle(Color("SecondaryColor"))
+                    Text(Localization.upload)
+                        .foregroundStyle(AppColors.secondaryColor.colorSwiftUI)
                 }
                 
             }
             .frame(height: 56)
             .padding([.trailing, .leading], 16)
-            .backgroundWhiteRoundedRectangle()
+            .backgroundWhiteRoundedRectangle(state: state == .default ? .default : .failed)
             
             failedDescriptionView()
                 .padding(.top, 4)
@@ -86,13 +87,13 @@ struct SignUpUploadView_Previews: PreviewProvider {
             GeometryReader { proxy in
                 VStack {
                     CurrentView(
-                        text: "Upload your photo",
+                        text: Localization.uploadPhoto,
                         buttonAction: { }
                     )
                     .padding()
                     CurrentView(
-                        text: "Upload your photo",
-                        description: "Photo is required",
+                        text: Localization.uploadPhoto,
+                        description: Localization.photoIsRequired,
                         buttonAction: { },
                         state: .failed
                     )

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-//private typealias Localization = AppLocale.SignUp
+private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
 private typealias ModuleView = Module.MainView
 
@@ -53,11 +53,11 @@ private extension ModuleView {
                 Spacer()
                 VStack(spacing: 18) {
                     Module.SignUpUploadView(
-                        text: "Upload your photo",
+                        text: Localization.uploadPhoto,
                         buttonAction: {}
                     )
                     AppCapsuleButton(
-                        label: "Sign up",
+                        label: Localization.buttonText,
                         action: {}
                     )
                     .padding(.bottom, 24)
@@ -68,14 +68,14 @@ private extension ModuleView {
     
     @ViewBuilder func positionView() -> some View {
         VStack(alignment: .leading) {
-            Text("Select your position")
+            Text(Localization.selectPosition)
                 .appFontRegularSize18()
             Module.ListView(
                 localizations: [
-                    "Frontend developer",
-                    "Backend developer",
-                    "Designer",
-                    "QA"
+                    Localization.Position.frontend,
+                    Localization.Position.backend,
+                    Localization.Position.designer,
+                    Localization.Position.qa
                 ], selectedIndex: { index in
                     debugPrint("\(index)")
                 }, state: state)

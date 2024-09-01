@@ -9,6 +9,10 @@ import SwiftUI
 
 extension Text {
     // MARK: - Regular
+    public func appFontRegularSize12() -> Text {
+        self.font(buildRegular(size: 12))
+    }
+    
     public func appFontRegularSize14() -> Text {
         self.font(buildRegular(size: 14))
     }

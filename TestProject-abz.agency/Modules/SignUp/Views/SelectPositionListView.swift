@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
 private typealias CurrentView = Module.ListView
 
@@ -52,16 +53,15 @@ struct ChooseLanguageListView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
             CurrentView(localizations: [
-                "Frontend developer",
-                "Backend developer",
-                "Designer",
-                "QA"
+                Localization.Position.frontend,
+                Localization.Position.backend,
+                Localization.Position.designer,
+                Localization.Position.qa
             ], selectedIndex: { index in
                 debugPrint("\(index)")
             }, state: state)
         }
         .padding()
-        // .accentColor(navigationAccentColor)
         .previewDevice(.iPhone15Pro)
     }
 }

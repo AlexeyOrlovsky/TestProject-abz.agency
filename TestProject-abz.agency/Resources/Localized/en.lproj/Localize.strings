@@ -19,3 +19,20 @@
 
 // MARK: - Users
 "users.notYet" = "There are no users yet";
+
+// MARK: - Sign Up
+"signUp.nameField" = "Your name";
+"signUp.emailField" = "Email";
+"signUp.emailInvalid" = "Invalid email format";
+"signUp.phoneField" = "Phone";
+"signUp.requiredField" = "Required field";
+"signUp.phoneNumberExample" = "+38 (XXX) XXX - XX - XX";
+"signUp.selectPosition" = "Select your position";
+"signUp.position.frontend" = "Frontend developer";
+"signUp.position.backend" = "Backend developer";
+"signUp.position.designer" = "Designer";
+"signUp.position.qa" = "QA";
+"signUp.uploadPhoto" = "Upload your photo";
+"signUp.photoIsRequired" = "Photo is required";
+"signUp.upload" = "Upload";
+"signUp.buttonText" = "Sign up";

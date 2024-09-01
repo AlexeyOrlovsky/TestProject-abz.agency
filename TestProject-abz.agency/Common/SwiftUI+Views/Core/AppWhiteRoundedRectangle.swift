@@ -42,9 +42,9 @@ struct AppWhiteRoundedRectangle: View {
         var color: Color {
             switch self {
             case .default:
-                Color.gray.opacity(0.5)
+                AppColors.borderGray.colorSwiftUI
             case .failed:
-                Color.red
+                AppColors.errorRedColor.colorSwiftUI
             }
         }
     }
