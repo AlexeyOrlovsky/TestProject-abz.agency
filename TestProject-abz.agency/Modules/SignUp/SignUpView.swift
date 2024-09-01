@@ -19,11 +19,10 @@ extension Module {
         @EnvironmentObject var navigator: AppFlowNavigator
 
         // MARK: - Public Properties
-        @State var state: TextFieldStates = .default
-        
         @State var name: String = ""
         @State var email: String = ""
         @State var phone: String = ""
+        @State var state: TextFieldStates = .default
 
         // MARK: - Body
         var body: some View {
@@ -46,7 +45,8 @@ private extension ModuleView {
                     Module.FormView(
                         name: $name,
                         email: $email,
-                        phone: $phone
+                        phone: $phone,
+                        state: state
                     )
                     .padding(.top, 32)
                     positionView()
@@ -55,7 +55,8 @@ private extension ModuleView {
                 VStack(spacing: 18) {
                     Module.SignUpUploadView(
                         text: Localization.uploadPhoto,
-                        buttonAction: {}
+                        buttonAction: {},
+                        state: state
                     )
                     AppCapsuleButton(
                         label: Localization.buttonText,

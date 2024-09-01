@@ -12,19 +12,19 @@ struct TestProjectApp: App {
     
     // MARK: - Dependencies
     @Inject(\.appCoordinator) var appCoordinator
-    @Inject(\.tabBarModule) var tabBarModule // for tests
+    // @Inject(\.tabBarModule) var tabBarModule // for tests
     
     var body: some Scene {
         WindowGroup {
-            tabBarModule.assemble()
-//            appCoordinator.assemble()
-//                .onAppear {
-//                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-//                        windowScene.windows.forEach { window in
-//                            window.overrideUserInterfaceStyle = .light
-//                        }
-//                    }
-//                }
+            // tabBarModule.assemble()
+            appCoordinator.assemble()
+                .onAppear {
+                    if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+                        windowScene.windows.forEach { window in
+                            window.overrideUserInterfaceStyle = .light
+                        }
+                    }
+                }
         }
     }
 }

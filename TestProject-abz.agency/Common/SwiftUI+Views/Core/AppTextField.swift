@@ -53,7 +53,7 @@ private extension CurrentView {
         VStack(spacing: 4) {
             textFieldView()
             failedDescriptionView()
-                .padding(8)
+                .padding(.top, 4)
         }
     }
     
@@ -63,7 +63,7 @@ private extension CurrentView {
                 self.placeholder,
                 text: self.$text,
                 prompt: Text(self.placeholder)
-                    .foregroundStyle(.textBlack)
+                    .foregroundStyle(.black48)
             )
             .textFieldStyle(
                 Style.TextField.WhiteCapsule(
@@ -91,7 +91,7 @@ private extension CurrentView {
                     ? .black60
                     : .errorRed
                 )
-                .padding([.leading], 4)
+                .padding(.leading)
             Spacer()
         }
     }

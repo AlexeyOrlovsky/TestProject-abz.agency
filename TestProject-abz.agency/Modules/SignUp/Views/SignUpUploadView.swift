@@ -48,12 +48,13 @@ private extension CurrentView {
             HStack {
                 Text(text)
                     .appFontRegularSize16()
-                    .foregroundStyle(.textPrimary)
+                    .foregroundStyle(state.color)
                 Spacer()
                 Button {
                     //
                 } label: {
                     Text(Localization.upload)
+                        .appFontSemiBoldSize16()
                         .foregroundStyle(AppColors.secondaryColor.colorSwiftUI)
                 }
                 
@@ -76,7 +77,7 @@ private extension CurrentView {
         HStack(spacing: .zero) {
             Text(self.description)
                 .font(.system(size: 14))
-                .foregroundStyle(.gray.opacity(1.0))
+                .foregroundStyle(state.color)
                 .padding([.leading], 4)
             Spacer()
         }

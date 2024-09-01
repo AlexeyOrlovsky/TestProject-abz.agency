@@ -35,7 +35,7 @@ private extension CurrentView {
         Button {
             didTap()
         } label: {
-            HStack(spacing: 8) {
+            HStack(spacing: 24) {
                 radioButtonView()
                 textView()
                 Spacer()
@@ -47,19 +47,16 @@ private extension CurrentView {
         VStack {
             if isSelected {
                 Circle()
-                    .strokeBorder(AppColors.secondaryColor.colorSwiftUI, lineWidth: 5)
+                    .strokeBorder(AppColors.secondaryColor.colorSwiftUI, lineWidth: 4)
                     .background(Circle()
                         .foregroundColor(Color.clear)
                     )
             } else {
                 Circle()
-                    .strokeBorder(
-                        .borderGray,
-                        lineWidth: 2
-                    )
+                    .strokeBorder(.borderGray, lineWidth: 1)
             }
         }
-        .frame(width: 20, height: 20)
+        .frame(width: 14, height: 14)
         .padding(4)
     }
 

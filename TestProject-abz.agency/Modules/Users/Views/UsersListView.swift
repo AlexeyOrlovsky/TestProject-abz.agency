@@ -50,7 +50,7 @@ private extension CurrentView {
             Module.UsersListRowView(model: model)
             if model != models.last {
                 Rectangle()
-                    .fill(AppColors.secondaryGray.colorSwiftUI)
+                    .fill(.secondaryGray)
                     .padding(.leading, 84)
                     .frame(maxWidth: .infinity)
                     .frame(height: 1)

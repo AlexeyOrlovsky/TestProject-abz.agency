@@ -33,7 +33,10 @@ private extension CurrentView {
     @ViewBuilder func content() -> some View {
         VStack(spacing: 8) {
             ForEachWithIndex(localizations) { index, item in
-                Module.ListRowView(item: item, isSelected: self._selectedIndex == index) {
+                Module.ListRowView(
+                    item: item,
+                    isSelected: self._selectedIndex == index
+                ) {
                     self._selectedIndex = index
                     selectedIndex(index)
                 }

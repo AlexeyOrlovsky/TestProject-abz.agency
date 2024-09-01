@@ -24,6 +24,7 @@ extension Module {
         @Binding var name: String
         @Binding var email: String
         @Binding var phone: String
+        var state: TextFieldStates
 
         // MARK: - Dependencies
         // @EnvironmentObject var avoider: KeyboardAvoider
@@ -41,24 +42,27 @@ extension Module {
 // MARK: - Private Layout
 extension CurrentView {
     @ViewBuilder func content() -> some View {
-        VStack(spacing: 0) {
+        VStack(spacing: 12) {
             AppTextField(
                 placeholder: Localization.nameField,
                 text: $name,
-                state: .default,
-                description: ""
+                state: state,
+                description: "",
+                failedDescription: Localization.requiredField
             )
             AppTextField(
                 placeholder: Localization.emailField,
                 text: $email,
-                state: .default,
-                description: ""
+                state: state,
+                description: "",
+                failedDescription: Localization.emailInvalid
             )
             AppTextField(
                 placeholder: Localization.phoneField,
                 text: $phone,
-                state: .default,
-                description: Localization.phoneNumberExample
+                state: state,
+                description: Localization.phoneNumberExample,
+                failedDescription: Localization.requiredField
             )
         }
     }
@@ -77,7 +81,8 @@ struct SignUpFormView_Previews: PreviewProvider {
                 CurrentView(
                     name: $name,
                     email: $email,
-                    phone: $phone
+                    phone: $phone,
+                    state: .failed
                 )
                 .padding()
             }
