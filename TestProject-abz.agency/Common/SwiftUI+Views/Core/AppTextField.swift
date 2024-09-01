@@ -80,7 +80,11 @@ private extension CurrentView {
     
     @ViewBuilder func failedDescriptionView() -> some View {
         HStack(spacing: .zero) {
-            Text(state == .default ? self.description : self.failedDescription)
+            Text(
+                state == .default
+                ? self.description
+                : self.failedDescription
+            )
                 .appFontRegularSize12()
                 .foregroundStyle(
                     state == .default 

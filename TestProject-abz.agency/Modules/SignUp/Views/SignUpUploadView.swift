@@ -60,7 +60,11 @@ private extension CurrentView {
             }
             .frame(height: 56)
             .padding([.trailing, .leading], 16)
-            .backgroundWhiteRoundedRectangle(state: state == .default ? .default : .failed)
+            .backgroundWhiteRoundedRectangle(
+                state: state == .default
+                ? .default
+                : .failed
+            )
             
             failedDescriptionView()
                 .padding(.top, 4)
