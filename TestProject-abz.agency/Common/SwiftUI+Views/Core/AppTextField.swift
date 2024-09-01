@@ -63,14 +63,16 @@ private extension CurrentView {
                 self.placeholder,
                 text: self.$text,
                 prompt: Text(self.placeholder)
-                    .foregroundStyle(
-                        state == .failed
-                        ? AppColors.errorRedColor.colorSwiftUI
-                        : .black48
-                    )
+                    .foregroundStyle(.textBlack)
             )
-            .textFieldStyle(Style.TextField.WhiteCapsule(state: state))
-            .foregroundStyle(AppColors.textBlack.colorSwiftUI)
+            .textFieldStyle(
+                Style.TextField.WhiteCapsule(
+                    state: text.isEmpty
+                    ? state 
+                    : .focused
+                )
+            )
+            .foregroundStyle(.textBlack)
             
             !text.isEmpty ? subPlaceholder() : nil
         }
@@ -94,9 +96,9 @@ private extension CurrentView {
         Text(self.placeholder)
             .appFontRegularSize12()
             .foregroundStyle(
-                state == .failed
-                ? AppColors.errorRedColor.colorSwiftUI
-                : AppColors.black48.colorSwiftUI
+                text == " "
+                ? AppColors.secondaryColor.colorSwiftUI
+                : .subTextPrimary
             )
             .padding(.leading)
             .padding(.bottom, 32)

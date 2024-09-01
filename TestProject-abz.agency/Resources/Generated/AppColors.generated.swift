@@ -33,6 +33,7 @@ public enum AppColors {
     public static let secondaryDark = ColorAsset(name: "SecondaryDark")
     public static let textBlack = ColorAsset(name: "TextBlack")
     public static let textPrimary = ColorAsset(name: "TextPrimary")
+    public static let subTextPrimary = ColorAsset(name: "subTextPrimary")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

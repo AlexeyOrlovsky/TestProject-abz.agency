@@ -37,12 +37,15 @@ struct AppWhiteRoundedRectangle: View {
     // MARK: - Text Field States
     enum TextFieldStates {
         case `default`
+        case focused
         case failed
         
         var color: Color {
             switch self {
             case .default:
                 AppColors.borderGray.colorSwiftUI
+            case .focused:
+                AppColors.secondaryColor.colorSwiftUI
             case .failed:
                 AppColors.errorRedColor.colorSwiftUI
             }
