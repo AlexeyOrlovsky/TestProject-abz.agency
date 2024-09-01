@@ -21,7 +21,7 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
-                .padding(.top, 36)
+                .padding(.top)
                 .padding([.leading, .trailing], 16)
         }
     }

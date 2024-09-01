@@ -10,14 +10,18 @@ import SwiftUI
 extension Style.Button {
     struct CapsuleButton: ButtonStyle {
         let minHeight: CGFloat
-        let color: Color
+        var state: CapsuleButtonStates
         
         func makeBody(configuration: Configuration) -> some View {
             configuration.label
                 .frame(maxWidth: .infinity, minHeight: minHeight)
                 .background {
                     RoundedRectangle(cornerRadius: 24)
-                        .fill(configuration.isPressed ? color.opacity(0.8) : color)
+                        .fill(
+                            configuration.isPressed
+                            ? AppColors.darkPrimaryColor.colorSwiftUI
+                            : state.color
+                        )
                         .frame(width: 140)
                 }
         }
@@ -32,9 +36,9 @@ struct CapsuleButtonDemo_Previews: PreviewProvider {
             ()
         } label: {
             Text("Sign up")
-                .foregroundStyle(.white)
+                .foregroundStyle(AppColors.textBlack.colorSwiftUI)
         }
-        .buttonStyle(Style.Button.CapsuleButton(minHeight: 48, color: .gray))
+        .buttonStyle(Style.Button.CapsuleButton(minHeight: 48, state: .normal))
         .padding([.leading, .trailing], 16)
     }
 }

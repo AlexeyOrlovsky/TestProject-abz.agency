@@ -8,24 +8,40 @@
 import SwiftUI
 
 private typealias CurrentView = AppCapsuleButton
+typealias CapsuleButtonStates = AppCapsuleButton.CapsuleButtonStates
 
 struct AppCapsuleButton: View {
+    // MARK: - Button States
+    enum CapsuleButtonStates {
+        case normal
+        case disabled
+        
+        var color: Color {
+            switch self {
+            case .normal:
+                AppColors.primaryColor.colorSwiftUI
+            case .disabled:
+                AppColors.borderGray.colorSwiftUI
+            }
+        }
+    }
+    
     // MARK: - Public Properties
     let label: String
     let action: () -> Void
 
     let minHeight: CGFloat
-    let color: Color
+    let state: CapsuleButtonStates
 
     init(
         label: String,
         minHeight: CGFloat = 48,
-        color: Color = .gray,
+        state: CapsuleButtonStates = .normal,
         action: @escaping () -> Void
     ) {
         self.label = label
         self.minHeight = minHeight
-        self.color = color
+        self.state = state
         self.action = action
     }
 
@@ -42,9 +58,15 @@ private extension CurrentView {
             self.action()
         } label: {
             Text(self.label)
-                .foregroundStyle(.white)
+                .appFontSemiBoldSize18()
+                .foregroundStyle(AppColors.textBlack.colorSwiftUI)
         }
-        .buttonStyle(Style.Button.CapsuleButton(minHeight: self.minHeight, color: self.color))
+        .buttonStyle(
+            Style.Button.CapsuleButton(
+                minHeight: self.minHeight,
+                state: self.state
+            )
+        )
     }
 }
 
@@ -52,7 +74,7 @@ private extension CurrentView {
 #if !RELEASE
 struct AppCapsuleButton_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentView(label: "Sign Up") { }
+        CurrentView(label: "Sign Up", state: .normal) { }
             .padding()
     }
 }

@@ -31,7 +31,6 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
-                .padding(.top, 36)
 //                .onChange(of: self.keyboardActiveField) { keyboardActiveField in
 //                    self.avoider.editingField = keyboardActiveField?.rawValue ?? Constants.noEditingFieldKey
 //                }

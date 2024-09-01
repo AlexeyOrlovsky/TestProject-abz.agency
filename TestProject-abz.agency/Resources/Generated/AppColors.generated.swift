@@ -24,6 +24,7 @@ public typealias AssetColorTypeAlias = ColorAsset.Color
 public enum AppColors {
     public static let borderGray = ColorAsset(name: "borderGray")
     public static let secondaryGray = ColorAsset(name: "SecondaryGray")
+    public static let darkPrimaryColor = ColorAsset(name: "DarkPrimaryColor")
     public static let errorRedColor = ColorAsset(name: "ErrorRedColor")
     public static let primaryColor = ColorAsset(name: "PrimaryColor")
     public static let secondaryColor = ColorAsset(name: "SecondaryColor")

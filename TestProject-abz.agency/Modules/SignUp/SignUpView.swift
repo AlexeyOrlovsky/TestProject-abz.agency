@@ -28,6 +28,7 @@ extension Module {
         // MARK: - Body
         var body: some View {
             content()
+                .padding(.top)
                 .padding([.leading, .trailing], 16)
             .onAppear {
                 self.viewModel.onAppear()
@@ -58,12 +59,14 @@ private extension ModuleView {
                     )
                     AppCapsuleButton(
                         label: Localization.buttonText,
+                        state: email.isEmpty ? .disabled : .normal,
                         action: {}
                     )
                     .padding(.bottom, 24)
                 }
             }
         }
+        
     }
     
     @ViewBuilder func positionView() -> some View {
