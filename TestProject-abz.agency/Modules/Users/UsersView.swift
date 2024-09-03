@@ -33,62 +33,9 @@ private extension ModuleView {
             Module.UsersEmptyView()
         case .withData:
             Module.UsersListView(
-                models: [
-                    .init(
-                        id: 1,
-                        name: "Malcolm Bailey",
-                        email: "jany_murazik51@hotmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 1,
-                        position: "Frontend developer",
-                        photo: "person.fill"
-                    ),
-                    .init(
-                        id: 2,
-                        name: "Seraphina Anastasia Isolde Aurelia Celestina von Hohenzollern",
-                        email: "maximus_wilderman_ronaldo_schuppe@gmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 2,
-                        position: "Backend developer",
-                        photo: "person.fill"
-                    ),
-                    .init(
-                        id: 3,
-                        name: "Gayle Weimann",
-                        email: "kenyatta.herman@hotmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 3,
-                        position: "Designer",
-                        photo: "person.fill"
-                    ),
-                    .init(
-                        id: 4,
-                        name: "Rochelle Bartoletti Melba Satterfield",
-                        email: "georgette_powlowski24@hotmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 4,
-                        position: "QA",
-                        photo: "person.fill"
-                    ),
-                    .init(
-                        id: 5,
-                        name: "Leland Cartwright",
-                        email: "maymie_marvin0@gmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 5,
-                        position: "Backend developer",
-                        photo: "person.fill"
-                    ),
-                    .init(
-                        id: 6,
-                        name: "Debra Cassin",
-                        email: "camylle35@hotmail.com",
-                        phone: "+38 (098) 278 76 24",
-                        position_id: 6,
-                        position: "Frontend developer",
-                        photo: "person.fill"
-                    )
-                ])
+                models: viewModel.userModels,
+                fetchNextPage: viewModel.fetchNextPage
+            )
         }
     }
 }

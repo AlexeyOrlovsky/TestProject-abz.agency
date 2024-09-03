@@ -13,9 +13,9 @@ private typealias CurrentView = Module.UsersListView
 extension Module {
     struct UsersListView: View {
         // MARK: - Public Properties
-        var models: [UsersModel]
-        // var fetchNextPage: () -> Void
-
+        var models: [UserModel]
+        var fetchNextPage: () -> Void
+        
         // MARK: - Private Properties
 
         // MARK: - Body
@@ -35,7 +35,7 @@ private extension CurrentView {
                 .onAppear {
                     guard model == models.last else { return }
 
-                    // fetchNextPage()
+                    fetchNextPage()
                 }
                 .listRowSeparator(.hidden, edges: .all)
                 .listRowBackground(Color.clear)
@@ -45,7 +45,7 @@ private extension CurrentView {
         .listStyle(.plain)
     }
 
-    @ViewBuilder func rowView(model: UsersModule.UsersModel) -> some View {
+    @ViewBuilder func rowView(model: UsersModule.UserModel) -> some View {
         VStack(spacing: .zero) {
             Module.UsersListRowView(model: model)
             if model != models.last {
@@ -119,8 +119,8 @@ struct UsersListView_Previews: PreviewProvider {
                     position: "Frontend developer",
                     photo: "person.fill"
                 )
-            ]
-            // fetchNextPage: { }
+            ],
+            fetchNextPage: { }
         )
         .previewDevice(.iPhone15Pro)
     }

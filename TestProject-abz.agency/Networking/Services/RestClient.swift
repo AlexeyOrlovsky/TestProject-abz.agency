@@ -12,18 +12,16 @@ import Alamofire
 enum BasePath {
     static var baseApiUrl: String {
         #if RELEASE
-        return "https://api.tollroad.dev.dnc.pp.ua"
+        return "https://frontend-test-assignment-api.abz.agency"
         #else
-        return "https://api.tollroad.dev.dnc.pp.ua"
+        return "https://frontend-test-assignment-api.abz.agency"
         #endif
     }
 }
 
 // MARK: - ApiURLsPath
 enum ApiURLsPath {
-    static let baseApiUrl: String = "\(BasePath.baseApiUrl)/api/v2"
-    static let loggerBaseApiUrl = "https://in.logs.betterstack.com"
-    static let googleMapsBaseApiUrl = "https://maps.googleapis.com/maps/api"
+    static let baseApiUrl: String = "\(BasePath.baseApiUrl)/api/v1"
 }
 
 // MARK: - BaseResponseWrapped

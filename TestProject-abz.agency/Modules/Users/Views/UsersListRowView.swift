@@ -13,7 +13,7 @@ private typealias CurrentView = Module.UsersListRowView
 extension Module {
     struct UsersListRowView: View {
         // MARK: - Public Properties
-        let model: UsersModel
+        let model: UserModel
         
         // MARK: - Private Properties
         private let textColor = Color(.textBlack)
@@ -32,33 +32,59 @@ private extension CurrentView {
     @ViewBuilder func content() -> some View {
         VStack {
             HStack(alignment: .top, spacing: 24) {
-                Image(systemName: model.photo)
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .clipShape(Circle())
-                
+                iconView()
                 VStack(alignment: .leading, spacing: 8) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(model.name)
-                            .appFontRegularSize18()
-                            .foregroundStyle(textColor)
-                        Text(model.position)
-                            .appFontRegularSize14()
-                            .foregroundColor(.textPrimary)
-                    }
-                    
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(model.email)
-                            .appFontRegularSize14()
-                            .foregroundStyle(textColor)
-                            .lineLimit(1)
-                        Text(model.phone)
-                            .appFontRegularSize14()
-                            .foregroundStyle(textColor)
-                    }
+                    userInfoView()
                 }
                 Spacer()
             }
+        }
+    }
+    
+    @ViewBuilder func iconView() -> some View {
+        if let url = URL(string: model.photo) {
+            AsyncImage(url: url) { phase in
+                switch phase {
+                case .empty:
+                    ProgressView()
+                case .success(let image):
+                    iconSetup(image)
+                case .failure:
+                    iconSetup(Image(systemName: "person"))
+                @unknown default:
+                    Image(systemName: "person")
+                }
+            }
+        } else {
+            Text("Invalid URL")
+        }
+    }
+    
+    @ViewBuilder func iconSetup(_ image: Image) -> some View {
+        image
+            .resizable()
+            .frame(width: 50, height: 50)
+            .clipShape(Circle())
+    }
+    
+    @ViewBuilder func userInfoView() -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(model.name)
+                .appFontRegularSize18()
+                .foregroundStyle(textColor)
+            Text(model.position)
+                .appFontRegularSize14()
+                .foregroundColor(.textPrimary)
+        }
+        
+        VStack(alignment: .leading, spacing: 4) {
+            Text(model.email)
+                .appFontRegularSize14()
+                .foregroundStyle(textColor)
+                .lineLimit(1)
+            Text(model.phone)
+                .appFontRegularSize14()
+                .foregroundStyle(textColor)
         }
     }
 }
