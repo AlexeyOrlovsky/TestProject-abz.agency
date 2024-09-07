@@ -15,6 +15,7 @@ extension Module {
         // MARK: - Public Properties
         var models: [UserModel]
         var fetchNextPage: () -> Void
+        var isLoadingNextPage: Bool
         
         // MARK: - Private Properties
 
@@ -30,19 +31,27 @@ extension Module {
 // MARK: - Private Layout
 private extension CurrentView {
     @ViewBuilder func content() -> some View {
-        List(models) { model in
-            self.rowView(model: model)
-                .onAppear {
-                    guard model == models.last else { return }
-
-                    fetchNextPage()
+        ScrollView {
+            LazyVStack {
+                ForEach(models) { model in
+                    self.rowView(model: model)
+                        .onAppear {
+                            guard model == models.last else { return }
+                            
+                            fetchNextPage()
+                        }
                 }
-                .listRowSeparator(.hidden, edges: .all)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
+            }
+            .listRowSeparator(.hidden)
+            
+            if isLoadingNextPage {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(1.5)
+                    .padding(.bottom, 24)
+            }
         }
         .scrollIndicators(.hidden)
-        .listStyle(.plain)
     }
 
     @ViewBuilder func rowView(model: UsersModule.UserModel) -> some View {
@@ -120,7 +129,8 @@ struct UsersListView_Previews: PreviewProvider {
                     photo: "person.fill"
                 )
             ],
-            fetchNextPage: { }
+            fetchNextPage: { },
+            isLoadingNextPage: true
         )
         .previewDevice(.iPhone15Pro)
     }

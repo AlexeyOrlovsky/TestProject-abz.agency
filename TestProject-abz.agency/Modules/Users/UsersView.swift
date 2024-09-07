@@ -34,7 +34,8 @@ private extension ModuleView {
         case .withData:
             Module.UsersListView(
                 models: viewModel.userModels,
-                fetchNextPage: viewModel.fetchNextPage
+                fetchNextPage: viewModel.fetchNextPage,
+                isLoadingNextPage: viewModel.isLoadingNextPage
             )
         }
     }

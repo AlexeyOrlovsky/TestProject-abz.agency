@@ -14,25 +14,22 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         private enum Constants {
-            static let initialPage: Int = 2
+            static let initialPage: Int = 1
             static let pageStep: Int = 1
-            static let count: Int = 4
+            static let count: Int = 6
         }
         
         // MARK: - Public Properties
-        private(set) var uiState: TabState = .withData
-        private(set) var userModels: [UserModel] = []
-        private(set) var errorText: String = ""
-        // @Published private(set) var uiState: TabState = .withData
-        // @Published private(set) var userModels: [UserModel] = []
-        // @Published private(set) var errorText: String = ""
+        @Published private(set) var uiState: TabState = .empty
+        @Published private(set) var userModels: [UserModel] = []
+        @Published private(set) var errorText: String = ""
+        @Published private(set) var isLoadingNextPage = false
         
         // MARK: - Dependencies
         weak var moduleOutput: ModuleOutput?
 
         // MARK: - Private Properties
         private var currentPage = Constants.initialPage
-        private var isLoadingNextPage = false
         private var didAppeared: Bool = false
 
         // MARK: - Services
@@ -57,25 +54,28 @@ extension Module {
         // MARK: - Lifecycle
         func onAppear() {
             cancellable.cancel()
+            guard !didAppeared else { return }
             
             fetchInitData()
+            self.didAppeared = true
         }
         
         // MARK: - ViewModelProtocol
         func fetchNextPage() {
             Task {
-                do {
-                    let usersResponse = try await self.fetchHistory()
-                    let newUserModels = usersResponse.map { UserModel(from: $0) }
+                let response = try await self.fetchHistory()
+                let newUserModels = response.map { UserModel(from: $0) }
+                
+                try await Task.sleep(nanoseconds: 1_000_000_000)
+                
+                await MainActor.run {
+                    self.isLoadingNextPage = false
                     self.userModels.append(contentsOf: newUserModels)
-                    self.isLoadingNextPage = false
-                    await MainActor.run {
-                        self.currentPage += Constants.pageStep
-                    }
-                } catch {
-                    self.isLoadingNextPage = false
-                    self.errorText = error.localizedDescription
+                    self.currentPage += Constants.pageStep
                 }
+            } catchInMain: { error in
+                self.isLoadingNextPage = false
+                self.errorText = error.localizedDescription
             }
         }
 
@@ -92,20 +92,20 @@ extension ViewModel: Module.ModuleInput {
 private extension ViewModel {
     func fetchInitData() {
         guard self.networkMonitor.isConnected else { return }
-        
+
         Task {
-            do {
-                let usersResponse = try await self.fetchHistory()
-                let userModels = usersResponse.map { UserModel(from: $0) }
+            let response = try await self.fetchHistory()
+            self.isLoadingNextPage = false
+            await MainActor.run {
+                // self.saveHistoryToDisk(models: response)
+                let userModels = response.map { UserModel(from: $0) }
                 self.userModels = userModels
-                self.isLoadingNextPage = false
-                await MainActor.run {
-                    self.currentPage += Constants.pageStep
-                }
-            } catch {
-                self.isLoadingNextPage = false
-                self.errorText = error.localizedDescription
+                self.currentPage += Constants.pageStep
+                self.uiState = .withData
             }
+        } catchInMain: { error in
+            self.isLoadingNextPage = false
+            self.errorText = error.localizedDescription
         }
     }
 

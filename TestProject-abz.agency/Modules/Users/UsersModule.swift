@@ -41,6 +41,8 @@ protocol UsersViewModelProtocol: ObservableObject {
     typealias UserModel = UsersModule.UserModel
     typealias TabState = UsersModule.TabState
     
+    var isLoadingNextPage: Bool { get }
+    
     var uiState: TabState { get }
     var userModels: [UsersModule.UserModel] { get }
     var errorText: String { get }
