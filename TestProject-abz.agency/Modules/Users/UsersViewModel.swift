@@ -97,7 +97,6 @@ private extension ViewModel {
             let response = try await self.fetchHistory()
             self.isLoadingNextPage = false
             await MainActor.run {
-                // self.saveHistoryToDisk(models: response)
                 let userModels = response.map { UserModel(from: $0) }
                 self.userModels = userModels
                 self.currentPage += Constants.pageStep

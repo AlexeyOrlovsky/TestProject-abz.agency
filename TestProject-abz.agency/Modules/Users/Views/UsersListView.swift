@@ -36,9 +36,9 @@ private extension CurrentView {
                 ForEach(models) { model in
                     self.rowView(model: model)
                         .onAppear {
-                            guard model == models.last else { return }
+                             guard model == models.last else { return }
                             
-                            fetchNextPage()
+                             fetchNextPage()
                         }
                 }
             }

@@ -84,12 +84,13 @@ private extension ModuleView {
 
     @ViewBuilder func content() -> some View {
         VStack {
-            TabView(selection: $viewModel.selectedTab) {
-                self.usersModule.assemble { input in
-                    input.configure(.init())
-                    return viewModel as? UsersModule.ModuleOutput
-                }
-                .tabItem { tabItem(key: .users) }
+            TabView { // (selection: $viewModel.selectedTab)
+//                self.usersModule.assemble { input in
+//                    input.configure(.init())
+//                    return viewModel as? UsersModule.ModuleOutput
+//                }
+                self.usersModule.assemble()
+                    .tabItem { tabItem(key: .users) }
                 self.signUpModule.assemble()
                     .tabItem { tabItem(key: .signUp) }
             }
