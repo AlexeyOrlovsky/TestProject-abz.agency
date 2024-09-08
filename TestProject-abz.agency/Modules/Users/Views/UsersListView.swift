@@ -13,9 +13,10 @@ private typealias CurrentView = Module.UsersListView
 extension Module {
     struct UsersListView: View {
         // MARK: - Public Properties
-        var models: [UsersModel]
-        // var fetchNextPage: () -> Void
-
+        var models: [UserModel]
+        var fetchNextPage: () -> Void
+        var isLoadingNextPage: Bool
+        
         // MARK: - Private Properties
 
         // MARK: - Body
@@ -30,22 +31,30 @@ extension Module {
 // MARK: - Private Layout
 private extension CurrentView {
     @ViewBuilder func content() -> some View {
-        List(models) { model in
-            self.rowView(model: model)
-                .onAppear {
-                    guard model == models.last else { return }
-
-                    // fetchNextPage()
+        ScrollView {
+            LazyVStack {
+                ForEach(models) { model in
+                    self.rowView(model: model)
+                        .onAppear {
+                             guard model == models.last else { return }
+                            
+                             fetchNextPage()
+                        }
                 }
-                .listRowSeparator(.hidden, edges: .all)
-                .listRowBackground(Color.clear)
-                .listRowInsets(EdgeInsets())
+            }
+            .listRowSeparator(.hidden)
+            
+            if isLoadingNextPage {
+                ProgressView()
+                    .progressViewStyle(CircularProgressViewStyle())
+                    .scaleEffect(1.5)
+                    .padding(.bottom, 24)
+            }
         }
         .scrollIndicators(.hidden)
-        .listStyle(.plain)
     }
 
-    @ViewBuilder func rowView(model: UsersModule.UsersModel) -> some View {
+    @ViewBuilder func rowView(model: UsersModule.UserModel) -> some View {
         VStack(spacing: .zero) {
             Module.UsersListRowView(model: model)
             if model != models.last {
@@ -119,8 +128,9 @@ struct UsersListView_Previews: PreviewProvider {
                     position: "Frontend developer",
                     photo: "person.fill"
                 )
-            ]
-            // fetchNextPage: { }
+            ],
+            fetchNextPage: { },
+            isLoadingNextPage: true
         )
         .previewDevice(.iPhone15Pro)
     }

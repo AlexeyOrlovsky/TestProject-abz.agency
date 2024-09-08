@@ -11,7 +11,7 @@ private typealias Module = UsersModule
 
 extension Module {
     // MARK: - HistoryModel
-    struct UsersModel: Identifiable, Equatable {
+    struct UserModel: Identifiable, Equatable {
         // MARK: - Public Properties
         var id: Int
         let name: String
@@ -38,6 +38,16 @@ extension Module {
             self.position_id = position_id
             self.position = position
             self.photo = photo
+        }
+        
+        init(from model: ResponseModels.UserModel.User) {
+            self.id = model.id
+            self.name = model.name
+            self.email = model.email
+            self.phone = model.phone
+            self.position_id = model.positionId
+            self.position = model.position
+            self.photo = model.photo
         }
     }
 }

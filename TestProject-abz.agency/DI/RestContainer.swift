@@ -55,5 +55,14 @@ extension Container: AutoRegistering {
     var networkMonitor: Factory<NetworkMonitorProtocol> {
         self { NetworkMonitor() }
     }
+    
+    // MARK: - Networking
+    var restClient: Factory<RestClient> {
+        self { RestClient(baseURL: ApiURLsPath.baseApiUrl) }
+    }
+    
+    var usersService: Factory<UsersService> {
+        self { RestUsersService(restClient: self.restClient.resolve()) }
+    }
 }
 
