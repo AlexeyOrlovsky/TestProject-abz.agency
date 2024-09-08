@@ -61,6 +61,11 @@
 		D231A3A02C778509004FECC8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A39F2C778509004FECC8 /* UserModel.swift */; };
 		D231A3AD2C77FE8B004FECC8 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3AC2C77FE8B004FECC8 /* UsersListView.swift */; };
 		D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */; };
+		D23ED4E72C8E330D00870274 /* MockSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4E42C8E330D00870274 /* MockSignUpService.swift */; };
+		D23ED4E82C8E330D00870274 /* RestSignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4E52C8E330D00870274 /* RestSignUpService.swift */; };
+		D23ED4E92C8E330D00870274 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4E62C8E330D00870274 /* SignUpService.swift */; };
+		D23ED4EE2C8E34CD00870274 /* ReqSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */; };
+		D23ED4F02C8E352300870274 /* ResSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */; };
 		D27ECF602C84891D0094343C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */; };
 		D27ED0DC2C84D7CC0094343C /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C52C84D7CC0094343C /* Data+Extension.swift */; };
 		D27ED0DD2C84D7CC0094343C /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */; };
@@ -161,6 +166,11 @@
 		D231A39F2C778509004FECC8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D231A3AC2C77FE8B004FECC8 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
 		D231A3AE2C7815F7004FECC8 /* PreviewDevicesKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDevicesKeys.swift; sourceTree = "<group>"; };
+		D23ED4E42C8E330D00870274 /* MockSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSignUpService.swift; sourceTree = "<group>"; };
+		D23ED4E52C8E330D00870274 /* RestSignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestSignUpService.swift; sourceTree = "<group>"; };
+		D23ED4E62C8E330D00870274 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqSignUpModel.swift; sourceTree = "<group>"; };
+		D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResSignUpModel.swift; sourceTree = "<group>"; };
 		D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		D27ED0C52C84D7CC0094343C /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
@@ -484,6 +494,42 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D23ED4E32C8E32E700870274 /* SignUpService */ = {
+			isa = PBXGroup;
+			children = (
+				D23ED4EA2C8E333D00870274 /* Models */,
+				D23ED4E62C8E330D00870274 /* SignUpService.swift */,
+				D23ED4E52C8E330D00870274 /* RestSignUpService.swift */,
+				D23ED4E42C8E330D00870274 /* MockSignUpService.swift */,
+			);
+			path = SignUpService;
+			sourceTree = "<group>";
+		};
+		D23ED4EA2C8E333D00870274 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D23ED4EB2C8E334B00870274 /* Request */,
+				D23ED4EC2C8E335100870274 /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D23ED4EB2C8E334B00870274 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		D23ED4EC2C8E335100870274 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		D27ED0CB2C84D7CC0094343C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -555,6 +601,7 @@
 				D27ED0EE2C84D7ED0094343C /* RestClient.swift */,
 				D27ED0F02C84D7F60094343C /* MockableService.swift */,
 				D27ED1032C84DBC60094343C /* UsersService */,
+				D23ED4E32C8E32E700870274 /* SignUpService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -801,6 +848,7 @@
 				D27ED0E72C84D7CD0094343C /* NetworkingRouterProtocol.swift in Sources */,
 				D20A6F992C7FA50F0055B5D8 /* SignUpUploadView.swift in Sources */,
 				D27ED0EF2C84D7ED0094343C /* RestClient.swift in Sources */,
+				D23ED4EE2C8E34CD00870274 /* ReqSignUpModel.swift in Sources */,
 				D2904B5D2C7A370800798E8D /* TabBarModule.swift in Sources */,
 				D211D61A2C80AD4800FE6035 /* AppColors.generated.swift in Sources */,
 				D27ED0DC2C84D7CC0094343C /* Data+Extension.swift in Sources */,
@@ -871,7 +919,11 @@
 				D20A6F902C7F72000055B5D8 /* UsersStates.swift in Sources */,
 				D27ED10A2C84DC5D0094343C /* MockUsersService.swift in Sources */,
 				D211D6282C81D07300FE6035 /* BuildBlocks.swift in Sources */,
+				D23ED4E72C8E330D00870274 /* MockSignUpService.swift in Sources */,
+				D23ED4E82C8E330D00870274 /* RestSignUpService.swift in Sources */,
+				D23ED4E92C8E330D00870274 /* SignUpService.swift in Sources */,
 				D27ED0E12C84D7CD0094343C /* URL+Extension.swift in Sources */,
+				D23ED4F02C8E352300870274 /* ResSignUpModel.swift in Sources */,
 				D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */,
 				D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */,
 				D2904B832C7BC3B800798E8D /* SignUpFormView.swift in Sources */,

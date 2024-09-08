@@ -14,10 +14,12 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
+        @Published private(set) var errorText: String = ""
 
         // MARK: - Private Properties
 
         // MARK: - Services
+        private var signUpService: SignUpService
 
         // MARK: - Managers
 
@@ -26,7 +28,9 @@ extension Module {
 
         // MARK: - Init
         init(
+            signUpService: SignUpService
         ) {
+            self.signUpService = signUpService
         }
 
         // MARK: - Lifecycle
@@ -35,6 +39,24 @@ extension Module {
         }
 
         // MARK: - Tap Actions
+        func didTapRegister(name: String, email: String, phone: String, positionId: Int, photo: String) async throws {
+            let requestModel: RequestModels.SignUpModel = .init(
+                name: name,
+                email: email,
+                phone: phone,
+                positionId: positionId,
+                photo: photo
+            )
+            do {
+                let resultModel = try await self.signUpService.signUp(requestModel)
+                // self.saveUser(model: resultModel)
+            } catch let error {
+                await MainActor.run {
+                    self.errorText = error.localizedDescription
+                }
+                throw error
+            }
+        }
     }
 }
 

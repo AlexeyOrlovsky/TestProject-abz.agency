@@ -61,7 +61,7 @@ private extension ModuleView {
                     AppCapsuleButton(
                         label: Localization.buttonText,
                         state: email.isEmpty ? .disabled : .normal,
-                        action: {}
+                        action: didTapNextButton
                     )
                     .padding(.bottom, 24)
                 }
@@ -89,6 +89,21 @@ private extension ModuleView {
 
 // MARK: - Private Methods
 private extension ModuleView {
+    func didTapNextButton() {
+        Task {
+            try await self.viewModel.didTapRegister(
+                name: name,
+                email: email,
+                phone: phone,
+                positionId: 1,
+                photo: "multipart/form-data; boundary=\("boundary")"
+            )
+            self.navigator.push(.signUpSuccess)
+        } catchInMain: { error in
+            AppLog.error(error.localizedDescription)
+            self.navigator.push(.signUpFailed)
+        }
+    }
 }
 
 // MARK: - Previews
