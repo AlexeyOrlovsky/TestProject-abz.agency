@@ -14,6 +14,7 @@ private typealias CurrentView = Module.ListView
 extension Module {
     struct ListView: View {
         // MARK: - Public Properties
+        // var model: PositionModel
         let localizations: [String]
         let selectedIndex: (Int) -> Void
         var state: TextFieldStates
@@ -52,15 +53,13 @@ struct ChooseLanguageListView_Previews: PreviewProvider {
 
     @State static private var isSelected: Int = .zero
     @State static private var state: TextFieldStates = .default
+    // @State static private var model: PositionModel
 
     static var previews: some View {
         VStack {
-            CurrentView(localizations: [
-                Localization.Position.frontend,
-                Localization.Position.backend,
-                Localization.Position.designer,
-                Localization.Position.qa
-            ], selectedIndex: { index in
+            CurrentView(
+                localizations: [""], // model.name
+                selectedIndex: { index in
                 debugPrint("\(index)")
             }, state: state)
         }

@@ -10,7 +10,7 @@ import Foundation
 private typealias Module = UsersModule
 
 extension Module {
-    // MARK: - HistoryModel
+    // MARK: - UserModel
     struct UserModel: Identifiable, Equatable {
         // MARK: - Public Properties
         var id: Int

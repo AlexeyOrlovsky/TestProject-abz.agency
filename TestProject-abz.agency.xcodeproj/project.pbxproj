@@ -66,6 +66,9 @@
 		D23ED4E92C8E330D00870274 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4E62C8E330D00870274 /* SignUpService.swift */; };
 		D23ED4EE2C8E34CD00870274 /* ReqSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */; };
 		D23ED4F02C8E352300870274 /* ResSignUpModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */; };
+		D24A02A42C946E28000FFF12 /* ReqPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A32C946E28000FFF12 /* ReqPositions.swift */; };
+		D24A02A62C946E3D000FFF12 /* ResPositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A52C946E3D000FFF12 /* ResPositionModel.swift */; };
+		D24A02A92C94782F000FFF12 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A82C94782F000FFF12 /* PositionModel.swift */; };
 		D27ECF602C84891D0094343C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */; };
 		D27ED0DC2C84D7CC0094343C /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C52C84D7CC0094343C /* Data+Extension.swift */; };
 		D27ED0DD2C84D7CC0094343C /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */; };
@@ -171,6 +174,9 @@
 		D23ED4E62C8E330D00870274 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqSignUpModel.swift; sourceTree = "<group>"; };
 		D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResSignUpModel.swift; sourceTree = "<group>"; };
+		D24A02A32C946E28000FFF12 /* ReqPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqPositions.swift; sourceTree = "<group>"; };
+		D24A02A52C946E3D000FFF12 /* ResPositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResPositionModel.swift; sourceTree = "<group>"; };
+		D24A02A82C94782F000FFF12 /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
 		D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		D27ED0C52C84D7CC0094343C /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
@@ -368,6 +374,7 @@
 				D231A35C2C7348F0004FECC8 /* SignUpViewModel.swift */,
 				D231A35B2C7348F0004FECC8 /* SignUpView.swift */,
 				D2904B812C7BC3A900798E8D /* Views */,
+				D24A02A72C947820000FFF12 /* Models */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -517,6 +524,7 @@
 		D23ED4EB2C8E334B00870274 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				D24A02A32C946E28000FFF12 /* ReqPositions.swift */,
 				D23ED4ED2C8E34CD00870274 /* ReqSignUpModel.swift */,
 			);
 			path = Request;
@@ -525,9 +533,18 @@
 		D23ED4EC2C8E335100870274 /* Response */ = {
 			isa = PBXGroup;
 			children = (
+				D24A02A52C946E3D000FFF12 /* ResPositionModel.swift */,
 				D23ED4EF2C8E352300870274 /* ResSignUpModel.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		D24A02A72C947820000FFF12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D24A02A82C94782F000FFF12 /* PositionModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D27ED0CB2C84D7CC0094343C /* Extensions */ = {
@@ -861,6 +878,7 @@
 				D2904B5F2C7A370800798E8D /* TabBarViewModel.swift in Sources */,
 				D231A3882C749E73004FECC8 /* FailedViewModel.swift in Sources */,
 				D27ED0DE2C84D7CC0094343C /* Date+Extension.swift in Sources */,
+				D24A02A92C94782F000FFF12 /* PositionModel.swift in Sources */,
 				D205A4112C6E6FAE00891867 /* LaunchModule.swift in Sources */,
 				D27ED0E62C84D7CD0094343C /* NetworkingSession.swift in Sources */,
 				D2904BA02C7E6A2700798E8D /* LocalizeKeys.swift in Sources */,
@@ -900,6 +918,7 @@
 				D211D6232C81D02200FE6035 /* NetworkMonitor.swift in Sources */,
 				D27ED0E92C84D7CD0094343C /* AuthenticatorProtocol.swift in Sources */,
 				D27ED0EC2C84D7CD0094343C /* NetworkingSessionProtocol.swift in Sources */,
+				D24A02A62C946E3D000FFF12 /* ResPositionModel.swift in Sources */,
 				D231A39D2C7784A0004FECC8 /* UsersListRowView.swift in Sources */,
 				D231A36F2C7397D0004FECC8 /* AppCapsuleButton.swift in Sources */,
 				D2904B852C7BC5A500798E8D /* SelectPositionListRowView.swift in Sources */,
@@ -912,6 +931,7 @@
 				D231A39A2C778472004FECC8 /* UsersViewModel.swift in Sources */,
 				D211D62B2C81D0C000FE6035 /* InterfaceType+Extension.swift in Sources */,
 				D205A42E2C6EB1ED00891867 /* CancelBag.swift in Sources */,
+				D24A02A42C946E28000FFF12 /* ReqPositions.swift in Sources */,
 				D205A41A2C6E703C00891867 /* AppCoordinatorViewModel.swift in Sources */,
 				D231A3A02C778509004FECC8 /* UserModel.swift in Sources */,
 				D27ED10E2C84DDC60094343C /* ReqUsers.swift in Sources */,

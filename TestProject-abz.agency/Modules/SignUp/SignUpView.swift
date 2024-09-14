@@ -75,14 +75,12 @@ private extension ModuleView {
             Text(Localization.selectPosition)
                 .appFontRegularSize18()
             Module.ListView(
-                localizations: [
-                    Localization.Position.frontend,
-                    Localization.Position.backend,
-                    Localization.Position.designer,
-                    Localization.Position.qa
-                ], selectedIndex: { index in
+                localizations: viewModel.positionModels.map { $0.name },
+                selectedIndex: { index in
                     debugPrint("\(index)")
-                }, state: state)
+                }, 
+                state: state
+            )
         }
     }
 }

@@ -63,7 +63,7 @@ extension Module {
         // MARK: - ViewModelProtocol
         func fetchNextPage() {
             Task {
-                let response = try await self.fetchHistory()
+                let response = try await self.fetchUsers()
                 let newUserModels = response.map { UserModel(from: $0) }
                 
                 try await Task.sleep(nanoseconds: 1_000_000_000)
@@ -94,7 +94,7 @@ private extension ViewModel {
         guard self.networkMonitor.isConnected else { return }
 
         Task {
-            let response = try await self.fetchHistory()
+            let response = try await self.fetchUsers()
             self.isLoadingNextPage = false
             await MainActor.run {
                 let userModels = response.map { UserModel(from: $0) }
@@ -108,7 +108,7 @@ private extension ViewModel {
         }
     }
 
-    func fetchHistory() async throws -> [ResponseModels.UserModel.User] {
+    func fetchUsers() async throws -> [ResponseModels.UserModel.User] {
         guard !isLoadingNextPage else {
             AppLog.debug("Already loaded next page")
             return []

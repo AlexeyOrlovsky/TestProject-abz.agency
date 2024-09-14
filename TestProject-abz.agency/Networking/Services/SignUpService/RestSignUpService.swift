@@ -24,4 +24,17 @@ extension RestSignUpService: SignUpService {
                 throw error
         }
     }
+    
+    func getPositions(_ model: RequestModels.Positions) async throws -> [ResponseModels.PositionModel.Position] {
+        let request = try restClient.tryRequest(RequestRouter.SignUp.positions(model))
+        let response = await request.asyncResponseData()
+        let result: Result<ResponseModels.PositionModel, Error> = restClient.responseData(response)
+        
+        switch result {
+        case .success(let data):
+            return data.positions
+        case .failure(let error):
+            throw error
+        }
+    }
 }

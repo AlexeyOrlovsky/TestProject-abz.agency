@@ -13,5 +13,11 @@ struct MockSignUpService: MockableService, SignUpService {
 
         return .init(success: .none, userId: .none, message: .none)
     }
+    
+    func getPositions(_ model: RequestModels.Positions) async throws -> [ResponseModels.PositionModel.Position] {
+        try await sleepRequest()
+
+        return []
+    }
 }
 

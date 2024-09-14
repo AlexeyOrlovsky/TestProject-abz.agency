@@ -14,6 +14,7 @@ private typealias ViewModel = Module.ViewModel
 extension Module {
     final class ViewModel: ViewModelProtocol {
         // MARK: - Public Properties
+        @Published private(set) var positionModels: [PositionModel] = []
         @Published private(set) var errorText: String = ""
 
         // MARK: - Private Properties
@@ -36,6 +37,8 @@ extension Module {
         // MARK: - Lifecycle
         func onAppear() {
             cancellable.cancel()
+            
+            fetchInitData()
         }
 
         // MARK: - Tap Actions
@@ -48,7 +51,7 @@ extension Module {
                 photo: photo
             )
             do {
-                let resultModel = try await self.signUpService.signUp(requestModel)
+                // let resultModel = try await self.signUpService.signUp(requestModel)
                 // self.saveUser(model: resultModel)
             } catch let error {
                 await MainActor.run {
@@ -62,4 +65,21 @@ extension Module {
 
 // MARK: - Private Methods
 private extension ViewModel {
+    func fetchInitData() {
+        Task {
+            let fetchedPositions = try await self.fetchPositions()
+            self.positionModels = fetchedPositions.map { PositionModel(from: $0) }
+        } catchInMain: { error in
+            self.errorText = error.localizedDescription
+        }
+    }
+    
+    func fetchPositions() async throws -> [ResponseModels.PositionModel.Position] {
+        let request: RequestModels.Positions = .init()
+        let response = try await self.signUpService.getPositions(request)
+        
+        debugPrint(response)
+
+        return response
+    }
 }

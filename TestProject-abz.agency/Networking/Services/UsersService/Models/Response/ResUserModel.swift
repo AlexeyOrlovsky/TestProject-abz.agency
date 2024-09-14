@@ -19,6 +19,7 @@ extension ResponseModels {
         let users: [User]
     }
 }
+
 extension ResponseModels.UserModel {
     struct User: Decodable {
         let id: Int

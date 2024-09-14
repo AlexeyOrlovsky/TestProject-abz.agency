@@ -22,6 +22,9 @@ struct SignUpModule {
 
 // MARK: - SignUpViewModelProtocol
 protocol SignUpViewModelProtocol: ObservableObject {
+    typealias PositionModel = SignUpModule.PositionModel
+    
+    var positionModels: [PositionModel] { get }
     var errorText: String { get }
     
     func didTapRegister(name: String, email: String, phone: String, positionId: Int, photo: String) async throws
