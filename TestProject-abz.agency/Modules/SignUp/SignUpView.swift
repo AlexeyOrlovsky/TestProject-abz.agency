@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
@@ -19,10 +20,16 @@ extension Module {
         @EnvironmentObject var navigator: AppFlowNavigator
 
         // MARK: - Public Properties
-        @State var name: String = ""
-        @State var email: String = ""
-        @State var phone: String = ""
-        @State var state: TextFieldStates = .default
+        @State var nameState: TextFieldStates = .default
+        @State var emailState: TextFieldStates = .default
+        @State var phoneState: TextFieldStates = .default
+        @State var photoState: TextFieldStates = .default
+        
+        // MARK: - Private Properties
+        @State private var name: String = ""
+        @State private var email: String = ""
+        @State private var phone: String = ""
+        @State private var positionId: Int = 1
 
         // MARK: - Body
         var body: some View {
@@ -46,7 +53,9 @@ private extension ModuleView {
                         name: $name,
                         email: $email,
                         phone: $phone,
-                        state: state
+                        nameState: nameState,
+                        emailState: emailState,
+                        phoneState: phoneState
                     )
                     .padding(.top, 32)
                     positionView()
@@ -56,7 +65,7 @@ private extension ModuleView {
                     Module.SignUpUploadView(
                         text: Localization.uploadPhoto,
                         buttonAction: {},
-                        state: state
+                        state: photoState
                     )
                     AppCapsuleButton(
                         label: Localization.buttonText,
@@ -77,9 +86,9 @@ private extension ModuleView {
             Module.ListView(
                 localizations: viewModel.positionModels.map { $0.name },
                 selectedIndex: { index in
+                    positionId = index + 1
                     debugPrint("\(index)")
-                }, 
-                state: state
+                }
             )
         }
     }
@@ -88,13 +97,32 @@ private extension ModuleView {
 // MARK: - Private Methods
 private extension ModuleView {
     func didTapNextButton() {
+        guard name.count >= 2 else { return nameState = .failed }
+        nameState = .focused
+        
+        guard viewModel.isValidEmail(email) else { return emailState = .failed }
+        emailState = .focused
+        
+        guard phone.hasPrefix("+380") else { return phoneState = .failed }
+        phoneState = .focused
+        
+//        guard let photo = photo,
+//              let imageData = photo.jpegData(compressionQuality: 1.0),
+//              imageData.count <= 5 * 1024 * 1024,  // Не больше 5MB
+//              let image = UIImage(data: imageData),
+//              image.size.width >= 70 && image.size.height >= 70 else {
+//            photoState = .failed
+//            return
+//        }
+//        photoState = .focused
+        
         Task {
             try await self.viewModel.didTapRegister(
                 name: name,
                 email: email,
                 phone: phone,
-                positionId: 1,
-                photo: "multipart/form-data; boundary=\("boundary")"
+                positionId: positionId,
+                photo: ""
             )
             self.navigator.push(.signUpSuccess)
         } catchInMain: { error in

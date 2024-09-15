@@ -13,28 +13,18 @@ private typealias CurrentView = Module.FormView
 
 extension Module {
     struct FormView: View {
-//        private enum Constants {
-//            static let noEditingFieldKey = -1
-//        }
-
-        // typealias KeyboardField = LoginModule.KeyboardField
-
         // MARK: - Public Properties
-        // @FocusState var keyboardActiveField: KeyboardField?
         @Binding var name: String
         @Binding var email: String
         @Binding var phone: String
-        var state: TextFieldStates
-
-        // MARK: - Dependencies
-        // @EnvironmentObject var avoider: KeyboardAvoider
+        
+        var nameState: TextFieldStates
+        var emailState: TextFieldStates
+        var phoneState: TextFieldStates
 
         // MARK: - Body
         var body: some View {
             content()
-//                .onChange(of: self.keyboardActiveField) { keyboardActiveField in
-//                    self.avoider.editingField = keyboardActiveField?.rawValue ?? Constants.noEditingFieldKey
-//                }
         }
     }
 }
@@ -46,21 +36,21 @@ extension CurrentView {
             AppTextField(
                 placeholder: Localization.nameField,
                 text: $name,
-                state: state,
+                state: nameState,
                 description: "",
                 failedDescription: Localization.requiredField
             )
             AppTextField(
                 placeholder: Localization.emailField,
                 text: $email,
-                state: state,
+                state: emailState,
                 description: "",
                 failedDescription: Localization.emailInvalid
             )
             AppTextField(
                 placeholder: Localization.phoneField,
                 text: $phone,
-                state: state,
+                state: phoneState,
                 description: Localization.phoneNumberExample,
                 failedDescription: Localization.requiredField
             )
@@ -82,7 +72,9 @@ struct SignUpFormView_Previews: PreviewProvider {
                     name: $name,
                     email: $email,
                     phone: $phone,
-                    state: .failed
+                    nameState: .default,
+                    emailState: .default,
+                    phoneState: .default
                 )
                 .padding()
             }

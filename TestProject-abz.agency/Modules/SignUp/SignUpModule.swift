@@ -28,6 +28,7 @@ protocol SignUpViewModelProtocol: ObservableObject {
     var errorText: String { get }
     
     func didTapRegister(name: String, email: String, phone: String, positionId: Int, photo: String) async throws
+    func isValidEmail(_ email: String) -> Bool
     
     func onAppear()
 }

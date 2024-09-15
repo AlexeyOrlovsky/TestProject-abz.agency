@@ -62,7 +62,7 @@ extension RequestRouter.SignUp: NetworkingRouterProtocol {
             case .signUp:
                 return [
                     "Token":
-                        "eyJpdiI6IitLK3V3M2NiN0ZNZ0Y0XC9ZNjJ1VlFRPT0iLCJ2YWx1ZSI6InhySUFJWThKQ1BmWDZvWHdKUFVBQnRWWkZMYjdnMzhmdWtuXC9xMEV1MnBrd1M3NHRUMWhxWFwva1wvZEk5R01cL01MaEZmdGg3UUVmM0h4bnJSR1wvSHVSS0E9PSIsIm1hYyI6IjUyNzUzNDE1YWFiMzIzMjI5MDJlMzQ5ODdlMWY1Mzg5Y2I5MjBhZGY2MGQ2MTM5OWJmZDA1ZGVjOWE4MWI2OTMifQ=="
+                        "eyJpdiI6IjNXaEFPUFRWa2Q1RE5VQVdsY1hianc9PSIsInZhbHVlIjoiRkRzaGlxTzFUK2Fhb1NnNUQ1dU5tdnNQRTRSeGdBNTZMZytDNVRqb1NmUWZrbDJWdlBiQTYwZVR2eWdRR1FFMGo5TmhValFiXC9VdzNGZVpqcXdQd21BPT0iLCJtYWMiOiJkNTM0OTJjZmZjMGUxZjkwMjdiNDE4NTI1NGRmMmI3NmQ0ODFhYTA3OWFkMTRmZGI0M2IzYjM4NTAzMGQwNmU5In0="
                 ]
             case .positions:
                 return nil

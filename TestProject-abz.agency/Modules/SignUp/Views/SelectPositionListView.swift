@@ -17,7 +17,6 @@ extension Module {
         // var model: PositionModel
         let localizations: [String]
         let selectedIndex: (Int) -> Void
-        var state: TextFieldStates
 
         // MARK: - Private Properties
         @State private var _selectedIndex: Int = .zero
@@ -49,19 +48,21 @@ private extension CurrentView {
 // MARK: - Previews
 #if !RELEASE
 struct ChooseLanguageListView_Previews: PreviewProvider {
-    // @Defaults(\.navigationAccentColor) static private var navigationAccentColor
-
     @State static private var isSelected: Int = .zero
-    @State static private var state: TextFieldStates = .default
-    // @State static private var model: PositionModel
-
+    
     static var previews: some View {
         VStack {
             CurrentView(
-                localizations: [""], // model.name
+                localizations: [
+                    "Examlple 1",
+                    "Examlple 2",
+                    "Examlple 3",
+                    "Examlple 4"
+                ],
                 selectedIndex: { index in
-                debugPrint("\(index)")
-            }, state: state)
+                    debugPrint("\(index)")
+                }
+            )
         }
         .padding()
         .previewDevice(.iPhone15Pro)

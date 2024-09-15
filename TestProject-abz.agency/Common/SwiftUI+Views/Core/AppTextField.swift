@@ -66,9 +66,13 @@ private extension CurrentView {
                     .foregroundStyle(.black48)
             )
             .textFieldStyle(
-                Style.TextField.WhiteCapsule(
+                state == .failed
+                ? Style.TextField.WhiteCapsule(
+                    state: .failed
+                )
+                : Style.TextField.WhiteCapsule(
                     state: text.isEmpty
-                    ? state 
+                    ? state
                     : .focused
                 )
             )
@@ -81,13 +85,13 @@ private extension CurrentView {
     @ViewBuilder func failedDescriptionView() -> some View {
         HStack(spacing: .zero) {
             Text(
-                state == .default
+                state == .default || state == .focused
                 ? self.description
                 : self.failedDescription
             )
                 .appFontRegularSize12()
                 .foregroundStyle(
-                    state == .default 
+                    state == .default || state == .focused
                     ? .black60
                     : .errorRed
                 )
@@ -114,6 +118,7 @@ private extension CurrentView {
 struct AppTextField_Previews: PreviewProvider {
     struct Container: View {
         @State private var phone: String = ""
+        @State private var email: String = "azazel@gmail.com"
         @State private var password: String = ""
         
         var body: some View {
@@ -126,8 +131,14 @@ struct AppTextField_Previews: PreviewProvider {
                     )
                     .padding()
                     CurrentView(
+                        placeholder: "Email",
+                        text: $email,
+                        description: "+38 (XXX) XXX - XX - XX"
+                    )
+                    .padding()
+                    CurrentView(
                         placeholder: "Phone",
-                        text: $phone,
+                        text: $password,
                         state: .failed,
                         failedDescription: "Required field"
                     )
