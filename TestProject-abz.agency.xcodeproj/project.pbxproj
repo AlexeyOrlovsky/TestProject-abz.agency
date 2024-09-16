@@ -69,6 +69,8 @@
 		D24A02A42C946E28000FFF12 /* ReqPositions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A32C946E28000FFF12 /* ReqPositions.swift */; };
 		D24A02A62C946E3D000FFF12 /* ResPositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A52C946E3D000FFF12 /* ResPositionModel.swift */; };
 		D24A02A92C94782F000FFF12 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A82C94782F000FFF12 /* PositionModel.swift */; };
+		D24A02AC2C982F83000FFF12 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02AB2C982F83000FFF12 /* ImagePicker.swift */; };
+		D24A02AE2C982F94000FFF12 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02AD2C982F94000FFF12 /* ImagePickerCoordinator.swift */; };
 		D27ECF602C84891D0094343C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */; };
 		D27ED0DC2C84D7CC0094343C /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C52C84D7CC0094343C /* Data+Extension.swift */; };
 		D27ED0DD2C84D7CC0094343C /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */; };
@@ -177,6 +179,8 @@
 		D24A02A32C946E28000FFF12 /* ReqPositions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqPositions.swift; sourceTree = "<group>"; };
 		D24A02A52C946E3D000FFF12 /* ResPositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResPositionModel.swift; sourceTree = "<group>"; };
 		D24A02A82C94782F000FFF12 /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
+		D24A02AB2C982F83000FFF12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		D24A02AD2C982F94000FFF12 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
 		D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		D27ED0C52C84D7CC0094343C /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
@@ -547,6 +551,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D24A02AA2C982F4A000FFF12 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				D24A02AB2C982F83000FFF12 /* ImagePicker.swift */,
+				D24A02AD2C982F94000FFF12 /* ImagePickerCoordinator.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		D27ED0CB2C84D7CC0094343C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -693,6 +706,7 @@
 				D20A6F982C7FA50F0055B5D8 /* SignUpUploadView.swift */,
 				D2904B862C7BC75200798E8D /* SelectPositionListView.swift */,
 				D2904B842C7BC5A500798E8D /* SelectPositionListRowView.swift */,
+				D24A02AA2C982F4A000FFF12 /* ImagePicker */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -901,6 +915,7 @@
 				D27ED0DF2C84D7CD0094343C /* HTTPURLResponse+Extension.swift in Sources */,
 				D2904B892C7BDD1000798E8D /* ForEachWithIndex.swift in Sources */,
 				D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */,
+				D24A02AC2C982F83000FFF12 /* ImagePicker.swift in Sources */,
 				D27ED0E02C84D7CD0094343C /* UIDevice+Extension.swift in Sources */,
 				D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */,
 				D231A3812C74995F004FECC8 /* SuccessViewModel.swift in Sources */,
@@ -947,6 +962,7 @@
 				D231A35D2C7348F0004FECC8 /* SignUpModule.swift in Sources */,
 				D231A35E2C7348F0004FECC8 /* SignUpView.swift in Sources */,
 				D2904B832C7BC3B800798E8D /* SignUpFormView.swift in Sources */,
+				D24A02AE2C982F94000FFF12 /* ImagePickerCoordinator.swift in Sources */,
 				D231A35F2C7348F0004FECC8 /* SignUpViewModel.swift in Sources */,
 				D231A3642C735F65004FECC8 /* AppTextField.swift in Sources */,
 				D27ED1072C84DC450094343C /* RestUsersService.swift in Sources */,

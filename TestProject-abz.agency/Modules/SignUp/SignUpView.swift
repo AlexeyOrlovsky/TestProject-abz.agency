@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import PhotosUI
+//import PhotosUI
 
 private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
@@ -30,7 +30,7 @@ extension Module {
         @State private var email: String = ""
         @State private var phone: String = ""
         @State private var positionId: Int = 1
-
+        
         // MARK: - Body
         var body: some View {
             content()
@@ -64,7 +64,10 @@ private extension ModuleView {
                 VStack(spacing: 18) {
                     Module.SignUpUploadView(
                         text: Localization.uploadPhoto,
-                        buttonAction: {},
+                        showCamera: { },
+                        showGallery: {
+    
+                        },
                         state: photoState
                     )
                     AppCapsuleButton(
@@ -76,7 +79,6 @@ private extension ModuleView {
                 }
             }
         }
-        
     }
     
     @ViewBuilder func positionView() -> some View {

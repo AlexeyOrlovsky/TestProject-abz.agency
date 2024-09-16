@@ -58,6 +58,14 @@ public enum AppLocale {
       public static var upload: String { AppLocale.tr("Localize", "signUp.upload") }
       /// Upload your photo
       public static var uploadPhoto: String { AppLocale.tr("Localize", "signUp.uploadPhoto") }
+    public enum Alert {
+        /// Camera
+        public static var camera: String { AppLocale.tr("Localize", "signUp.alert.camera") }
+        /// Gallery
+        public static var gallery: String { AppLocale.tr("Localize", "signUp.alert.gallery") }
+        /// Choose how you want to add a photo
+        public static var title: String { AppLocale.tr("Localize", "signUp.alert.title") }
+    }
     public enum Position {
         /// Backend developer
         public static var backend: String { AppLocale.tr("Localize", "signUp.position.backend") }

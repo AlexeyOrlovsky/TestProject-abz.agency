@@ -36,3 +36,6 @@
 "signUp.photoIsRequired" = "Photo is required";
 "signUp.upload" = "Upload";
 "signUp.buttonText" = "Sign up";
+"signUp.alert.title" = "Choose how you want to add a photo";
+"signUp.alert.camera" = "Camera";
+"signUp.alert.gallery" = "Gallery";

@@ -12,9 +12,11 @@ private typealias Module = SignUpModule
 extension Module {
     // MARK: - Position
     struct PositionModel: Decodable {
+        // MARK: - Public Properties
         let id: Int
         let name: String
         
+        // MARK: - Init
         init(
             id: Int,
             name: String

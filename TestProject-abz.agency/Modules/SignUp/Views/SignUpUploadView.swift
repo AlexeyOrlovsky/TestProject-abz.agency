@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 private typealias Localization = AppLocale.SignUp
 private typealias Module = SignUpModule
@@ -16,21 +17,28 @@ extension Module {
         // MARK: - Public Properties
         let text: String
         let description: String
-        let buttonAction: () -> Void
+        let showCamera: () -> Void
+        let showGallery: () -> Void
         var state: TextFieldStates
         
         // MARK: Private Properties
+        @State private var showAlert = false
+        @State private var isImagePickerPresented = false
+        @State private var selectedImage: UIImage?
+        @State private var imageSource: UIImagePickerController.SourceType = .photoLibrary
         
         // MARK: - Init
         init(
             text: String,
             description: String = "",
-            buttonAction: @escaping () -> Void,
+            showCamera: @escaping () -> Void,
+            showGallery: @escaping () -> Void,
             state: TextFieldStates = .default
         ) {
             self.text = text
             self.description = description
-            self.buttonAction = buttonAction
+            self.showCamera = showCamera
+            self.showGallery = showGallery
             self.state = state
         }
         
@@ -51,13 +59,36 @@ private extension CurrentView {
                     .foregroundStyle(state.color)
                 Spacer()
                 Button {
-                    //
+                    showAlert = true
                 } label: {
                     Text(Localization.upload)
                         .appFontSemiBoldSize16()
                         .foregroundStyle(AppColors.secondaryColor.colorSwiftUI)
                 }
-                
+                .actionSheet(isPresented: $showAlert) {
+                    ActionSheet(
+                        title: Text(Localization.Alert.title),
+                        buttons: [
+                            .default(Text(Localization.Alert.camera)) {
+                                if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                                    imageSource = .camera
+                                    isImagePickerPresented = true
+                                } else {
+                                    print("Camera is not available on this device")
+                                }
+                            },
+                            .default(Text(Localization.Alert.gallery)) {
+                                imageSource = .photoLibrary
+                                isImagePickerPresented = true
+                                debugPrint(selectedImage ?? .init())
+                            },
+                            .cancel()
+                        ]
+                    )
+                }
+                .sheet(isPresented: $isImagePickerPresented) {
+                    ImagePicker(selectedImage: $selectedImage, isPresented: $isImagePickerPresented, sourceType: imageSource)
+                }
             }
             .frame(height: 56)
             .padding([.trailing, .leading], 16)
@@ -93,13 +124,15 @@ struct SignUpUploadView_Previews: PreviewProvider {
                 VStack {
                     CurrentView(
                         text: Localization.uploadPhoto,
-                        buttonAction: { }
+                        showCamera: { },
+                        showGallery: { }
                     )
                     .padding()
                     CurrentView(
                         text: Localization.uploadPhoto,
                         description: Localization.photoIsRequired,
-                        buttonAction: { },
+                        showCamera: { },
+                        showGallery: { },
                         state: .failed
                     )
                     .padding()
