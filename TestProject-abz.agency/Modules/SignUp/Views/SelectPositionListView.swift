@@ -14,7 +14,6 @@ private typealias CurrentView = Module.ListView
 extension Module {
     struct ListView: View {
         // MARK: - Public Properties
-        // var model: PositionModel
         let localizations: [String]
         let selectedIndex: (Int) -> Void
 

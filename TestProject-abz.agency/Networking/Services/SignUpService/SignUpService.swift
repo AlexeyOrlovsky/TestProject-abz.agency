@@ -60,10 +60,7 @@ extension RequestRouter.SignUp: NetworkingRouterProtocol {
     var headers: HTTPHeaders? {
         switch self {
             case .signUp:
-                return [
-                    "Token":
-                        "eyJpdiI6IjNXaEFPUFRWa2Q1RE5VQVdsY1hianc9PSIsInZhbHVlIjoiRkRzaGlxTzFUK2Fhb1NnNUQ1dU5tdnNQRTRSeGdBNTZMZytDNVRqb1NmUWZrbDJWdlBiQTYwZVR2eWdRR1FFMGo5TmhValFiXC9VdzNGZVpqcXdQd21BPT0iLCJtYWMiOiJkNTM0OTJjZmZjMGUxZjkwMjdiNDE4NTI1NGRmMmI3NmQ0ODFhYTA3OWFkMTRmZGI0M2IzYjM4NTAzMGQwNmU5In0="
-                ]
+            return ["Token": globalAuthToken ?? .init()]
             case .positions:
                 return nil
         }

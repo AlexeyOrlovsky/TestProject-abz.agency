@@ -12,9 +12,10 @@ struct SignUpModule {
     typealias ViewModelProtocol = SignUpViewModelProtocol
     
     @Inject(\.signUpService) private var signUpService
+    @Inject(\.tokenService) private var tokenService
 
     func assemble() -> some View {
-        let viewModel: ViewModel = .init(signUpService: signUpService)
+        let viewModel: ViewModel = .init(signUpService: signUpService, tokenService: tokenService)
 
         return MainView(viewModel: viewModel)
     }

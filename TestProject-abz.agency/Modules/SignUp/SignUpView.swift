@@ -30,6 +30,7 @@ extension Module {
         @State private var email: String = ""
         @State private var phone: String = ""
         @State private var positionId: Int = 1
+        @State private var selectedImage: UIImage? = .init()
         
         // MARK: - Body
         var body: some View {
@@ -64,10 +65,7 @@ private extension ModuleView {
                 VStack(spacing: 18) {
                     Module.SignUpUploadView(
                         text: Localization.uploadPhoto,
-                        showCamera: { },
-                        showGallery: {
-    
-                        },
+                        selectedImage: $selectedImage,
                         state: photoState
                     )
                     AppCapsuleButton(
@@ -108,15 +106,15 @@ private extension ModuleView {
         guard phone.hasPrefix("+380") else { return phoneState = .failed }
         phoneState = .focused
         
-//        guard let photo = photo,
-//              let imageData = photo.jpegData(compressionQuality: 1.0),
-//              imageData.count <= 5 * 1024 * 1024,  // Не больше 5MB
-//              let image = UIImage(data: imageData),
-//              image.size.width >= 70 && image.size.height >= 70 else {
-//            photoState = .failed
-//            return
-//        }
-//        photoState = .focused
+        guard let photo = selectedImage,
+              let imageData = photo.jpegData(compressionQuality: 1.0),
+              imageData.count <= 5 * 1024 * 1024
+              /* let image = UIImage(data: imageData) */
+              /* image.size.width >= 70 && image.size.height >= 70 */ else {
+            photoState = .failed
+            return
+        }
+        photoState = .default
         
         Task {
             try await self.viewModel.didTapRegister(
@@ -124,7 +122,7 @@ private extension ModuleView {
                 email: email,
                 phone: phone,
                 positionId: positionId,
-                photo: ""
+                photo: "\(selectedImage ?? .init())"
             )
             self.navigator.push(.signUpSuccess)
         } catchInMain: { error in

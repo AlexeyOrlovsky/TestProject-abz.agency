@@ -17,28 +17,24 @@ extension Module {
         // MARK: - Public Properties
         let text: String
         let description: String
-        let showCamera: () -> Void
-        let showGallery: () -> Void
+        @Binding var selectedImage: UIImage?
         var state: TextFieldStates
         
         // MARK: Private Properties
         @State private var showAlert = false
         @State private var isImagePickerPresented = false
-        @State private var selectedImage: UIImage?
         @State private var imageSource: UIImagePickerController.SourceType = .photoLibrary
         
         // MARK: - Init
         init(
             text: String,
             description: String = "",
-            showCamera: @escaping () -> Void,
-            showGallery: @escaping () -> Void,
+            selectedImage: Binding<UIImage?>,
             state: TextFieldStates = .default
         ) {
             self.text = text
             self.description = description
-            self.showCamera = showCamera
-            self.showGallery = showGallery
+            self._selectedImage = selectedImage
             self.state = state
         }
         
@@ -56,7 +52,11 @@ private extension CurrentView {
             HStack {
                 Text(text)
                     .appFontRegularSize16()
-                    .foregroundStyle(state.color)
+                    .foregroundStyle(
+                        state == .default
+                        ? .black48
+                        : .errorRed
+                    )
                 Spacer()
                 Button {
                     showAlert = true
@@ -80,7 +80,7 @@ private extension CurrentView {
                             .default(Text(Localization.Alert.gallery)) {
                                 imageSource = .photoLibrary
                                 isImagePickerPresented = true
-                                debugPrint(selectedImage ?? .init())
+                                debugPrint("\(selectedImage)")
                             },
                             .cancel()
                         ]
@@ -118,21 +118,21 @@ private extension CurrentView {
 // MARK: - Previews
 #if !RELEASE
 struct SignUpUploadView_Previews: PreviewProvider {
+    @State static private var image: UIImage? = .launchLogo
+    
     struct Container: View {
         var body: some View {
             GeometryReader { proxy in
                 VStack {
                     CurrentView(
                         text: Localization.uploadPhoto,
-                        showCamera: { },
-                        showGallery: { }
+                        selectedImage: $image
                     )
                     .padding()
                     CurrentView(
                         text: Localization.uploadPhoto,
                         description: Localization.photoIsRequired,
-                        showCamera: { },
-                        showGallery: { },
+                        selectedImage: $image,
                         state: .failed
                     )
                     .padding()

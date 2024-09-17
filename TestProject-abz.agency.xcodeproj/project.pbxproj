@@ -71,6 +71,10 @@
 		D24A02A92C94782F000FFF12 /* PositionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02A82C94782F000FFF12 /* PositionModel.swift */; };
 		D24A02AC2C982F83000FFF12 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02AB2C982F83000FFF12 /* ImagePicker.swift */; };
 		D24A02AE2C982F94000FFF12 /* ImagePickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02AD2C982F94000FFF12 /* ImagePickerCoordinator.swift */; };
+		D24A02B92C9A1E56000FFF12 /* MockTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02B62C9A1E56000FFF12 /* MockTokenService.swift */; };
+		D24A02BA2C9A1E56000FFF12 /* RestTokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02B72C9A1E56000FFF12 /* RestTokenService.swift */; };
+		D24A02BB2C9A1E56000FFF12 /* TokenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02B82C9A1E56000FFF12 /* TokenService.swift */; };
+		D24A02BF2C9A1FDB000FFF12 /* ResToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24A02BE2C9A1FDB000FFF12 /* ResToken.swift */; };
 		D27ECF602C84891D0094343C /* Nunito-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */; };
 		D27ED0DC2C84D7CC0094343C /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C52C84D7CC0094343C /* Data+Extension.swift */; };
 		D27ED0DD2C84D7CC0094343C /* DataRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */; };
@@ -181,6 +185,10 @@
 		D24A02A82C94782F000FFF12 /* PositionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionModel.swift; sourceTree = "<group>"; };
 		D24A02AB2C982F83000FFF12 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		D24A02AD2C982F94000FFF12 /* ImagePickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCoordinator.swift; sourceTree = "<group>"; };
+		D24A02B62C9A1E56000FFF12 /* MockTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTokenService.swift; sourceTree = "<group>"; };
+		D24A02B72C9A1E56000FFF12 /* RestTokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestTokenService.swift; sourceTree = "<group>"; };
+		D24A02B82C9A1E56000FFF12 /* TokenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenService.swift; sourceTree = "<group>"; };
+		D24A02BE2C9A1FDB000FFF12 /* ResToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResToken.swift; sourceTree = "<group>"; };
 		D27ECF5F2C84891D0094343C /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		D27ED0C52C84D7CC0094343C /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		D27ED0C62C84D7CC0094343C /* DataRequest+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DataRequest+Extension.swift"; sourceTree = "<group>"; };
@@ -560,6 +568,33 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
+		D24A02B12C98BCF9000FFF12 /* TokenService */ = {
+			isa = PBXGroup;
+			children = (
+				D24A02BC2C9A1FBE000FFF12 /* Models */,
+				D24A02B82C9A1E56000FFF12 /* TokenService.swift */,
+				D24A02B72C9A1E56000FFF12 /* RestTokenService.swift */,
+				D24A02B62C9A1E56000FFF12 /* MockTokenService.swift */,
+			);
+			path = TokenService;
+			sourceTree = "<group>";
+		};
+		D24A02BC2C9A1FBE000FFF12 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D24A02BD2C9A1FC5000FFF12 /* Response */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D24A02BD2C9A1FC5000FFF12 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				D24A02BE2C9A1FDB000FFF12 /* ResToken.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		D27ED0CB2C84D7CC0094343C /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -609,9 +644,9 @@
 		D27ED0DA2C84D7CC0094343C /* NetworkingSession */ = {
 			isa = PBXGroup;
 			children = (
-				D27ED0CB2C84D7CC0094343C /* Extensions */,
 				D27ED0D12C84D7CC0094343C /* Session */,
 				D27ED0D92C84D7CC0094343C /* SessionProtocols */,
+				D27ED0CB2C84D7CC0094343C /* Extensions */,
 			);
 			path = NetworkingSession;
 			sourceTree = "<group>";
@@ -632,6 +667,7 @@
 				D27ED0F02C84D7F60094343C /* MockableService.swift */,
 				D27ED1032C84DBC60094343C /* UsersService */,
 				D23ED4E32C8E32E700870274 /* SignUpService */,
+				D24A02B12C98BCF9000FFF12 /* TokenService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -910,6 +946,7 @@
 				D27ED0E22C84D7CD0094343C /* NetworkingAuthenticator.swift in Sources */,
 				D2904B9E2C7E6A1500798E8D /* AppStrings.generated.swift in Sources */,
 				D20A6F8E2C7F5C2A0055B5D8 /* UsersEmptyView.swift in Sources */,
+				D24A02BF2C9A1FDB000FFF12 /* ResToken.swift in Sources */,
 				D231A37F2C74995F004FECC8 /* SuccessModule.swift in Sources */,
 				D231A38F2C777CB3004FECC8 /* AppFonts.generated.swift in Sources */,
 				D27ED0DF2C84D7CD0094343C /* HTTPURLResponse+Extension.swift in Sources */,
@@ -917,6 +954,9 @@
 				D231A3802C74995F004FECC8 /* SuccessView.swift in Sources */,
 				D24A02AC2C982F83000FFF12 /* ImagePicker.swift in Sources */,
 				D27ED0E02C84D7CD0094343C /* UIDevice+Extension.swift in Sources */,
+				D24A02B92C9A1E56000FFF12 /* MockTokenService.swift in Sources */,
+				D24A02BA2C9A1E56000FFF12 /* RestTokenService.swift in Sources */,
+				D24A02BB2C9A1E56000FFF12 /* TokenService.swift in Sources */,
 				D231A3AF2C7815F7004FECC8 /* PreviewDevicesKeys.swift in Sources */,
 				D231A3812C74995F004FECC8 /* SuccessViewModel.swift in Sources */,
 				D205A4372C6F561A00891867 /* NoConnectionView.swift in Sources */,

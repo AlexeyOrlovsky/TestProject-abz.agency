@@ -21,6 +21,7 @@ extension Module {
 
         // MARK: - Services
         private var signUpService: SignUpService
+        private var tokenService: TokenService
 
         // MARK: - Managers
 
@@ -29,15 +30,18 @@ extension Module {
 
         // MARK: - Init
         init(
-            signUpService: SignUpService
+            signUpService: SignUpService,
+            tokenService: TokenService
         ) {
             self.signUpService = signUpService
+            self.tokenService = tokenService
         }
 
         // MARK: - Lifecycle
         func onAppear() {
             cancellable.cancel()
             
+            fetchInitToken()
             fetchInitPositions()
         }
         
@@ -89,5 +93,18 @@ private extension ViewModel {
         debugPrint(response)
         
         return response
+    }
+    
+    func fetchInitToken() {
+        Task {
+            try await self.fetchToken()
+        } catchInMain: { error in
+            self.errorText = error.localizedDescription
+        }
+    }
+    
+    func fetchToken() async throws {
+        let token = try await tokenService.fetchToken()
+        globalAuthToken = token
     }
 }

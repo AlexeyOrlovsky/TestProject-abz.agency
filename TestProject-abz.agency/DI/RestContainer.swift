@@ -68,5 +68,9 @@ extension Container: AutoRegistering {
     var signUpService: Factory<SignUpService> {
         self { RestSignUpService(restClient: self.restClient.resolve()) }
     }
+    
+    var tokenService: Factory<TokenService> {
+        self { RestTokenService(restClient: self.restClient.resolve()) }
+    }
 }
 
