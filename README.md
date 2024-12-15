@@ -27,13 +27,13 @@ Test task for the company ABZ.agency. The project also serves as an example of m
  - This approach was chosen because the project uses `SwiftUI`, and MVVM is a great fit, allowing for a multi-modular application.
  - The architecture makes it easier to maintain and extend the product in the future. The `Coordinator` pattern, which involves using a separate module responsible for navigation, helps reduce coupling between modules and integrates well with MVVM.
    ### 📂📁 Project structure
- - `App` - Responsible for launching the application + Coordinator
- - `Dependency Injection` - fill out
- - `Common` - fill out
- - `Modules` - fill out
- - `Networking` - fill out
- - `Utils` - fill out
- - `Resources` - fill out
+ - `App` - Responsible for launching the application + Coordinator.
+ - `Dependency Injection` - Dependency Injection simplifies object creation, management, and testing by using factories for app modules and coordinators.
+ - `Common` - Reusable global UI components for consistent app design.
+ - `Modules` - MVVM implementations for app screens (e.g., Launch, Registration).
+ - `Networking` - Networking layer handling HTTP requests (GET, POST, etc.).
+ - `Utils` - Global managers, extensions, and utilities (e.g., Logger).
+ - `Resources` - SwiftGen outputs, localizations, fonts, assets, and colors.
 
 
 
